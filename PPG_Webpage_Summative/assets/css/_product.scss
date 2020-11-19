@@ -1,0 +1,18 @@
+// product module
+.product{
+
+    color:red;
+    @include respond-to('bp1') {
+        color: blue;
+    }
+
+
+    @include respond-to-custom('50em') {
+        border:thin red solid;
+    }
+
+    @include respond-to('bp2') {
+        display:flex;
+    }
+
+}
