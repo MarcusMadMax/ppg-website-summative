@@ -99,8 +99,8 @@ $white-color: #fff;
 
 .wrapper{
     font-family: 'Ubuntu', sans-serif;
-    // background: $main-color;
-    overflow: hidden;
+    overflow-x: hidden;
+    width: 100vw;
 
     header{ 
         .nav{
@@ -362,7 +362,7 @@ $white-color: #fff;
     footer{
         position: relative;
         width: 100vw;
-        background-image: url('/PPG_Webpage_Summative/assets/img/backgrounds/footer-background.svg');
+        background-image: url('../img/backgrounds/footer-background.svg');
         background-size: cover;
         background-repeat: no-repeat;
 
@@ -383,7 +383,6 @@ $white-color: #fff;
                     display: flex;
                     justify-content: center;
                     margin: 1.5em 0;
-
 
                     a{
                         text-decoration: none;
@@ -407,7 +406,6 @@ $white-color: #fff;
             .footer-social{
                 text-align: center;
                 margin: .5em 0;
-                background-color: $main-color;
 
                 a{
 
@@ -443,7 +441,6 @@ $white-color: #fff;
                 }
             }
         }
-
         @import 'home-desktop-footer';
     }
 }

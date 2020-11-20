@@ -14,19 +14,17 @@ $white-color: #fff;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 2em 2em;
+        padding: 0 2em;
         box-sizing: border-box;
-        background-color: transparent;
-        border: 1px solid green;
 
 
         .footer-address{
-            border: 1px solid green;
+            height: 100%;
             height: 100%;
             text-align: left;
 
             h3{
-                margin: 1em 0 0 .5em;
+                margin: 1em 0 0 0;
                 font-size: 2em;
                 letter-spacing: .25em;
                 text-transform: uppercase;

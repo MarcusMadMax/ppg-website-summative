@@ -7,7 +7,8 @@
 
 .wrapper {
   font-family: 'Ubuntu', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .wrapper header .nav {
@@ -528,6 +529,7 @@
   }
   .wrapper main .quote-section h1 {
     font-size: 4em;
+    color: #fff;
   }
   .wrapper main .quote-section img {
     display: block;
@@ -604,7 +606,7 @@
 .wrapper footer {
   position: relative;
   width: 100vw;
-  background-image: url("/PPG_Webpage_Summative/assets/img/backgrounds/footer-background.svg");
+  background-image: url("../img/backgrounds/footer-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -660,7 +662,6 @@
 .wrapper footer .footer-content .footer-social {
   text-align: center;
   margin: .5em 0;
-  background-color: #1A1B26;
 }
 
 .wrapper footer .footer-content .footer-social a i {
@@ -694,6 +695,9 @@
 
 @media (min-width: 1200px) {
   .wrapper footer .footer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -704,23 +708,20 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 2em 2em;
+    padding: 0 2em;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    background-color: transparent;
-    border: 1px solid green;
   }
   .wrapper footer .footer-content .footer-address {
-    border: 1px solid green;
+    height: 100%;
     height: 100%;
     text-align: left;
   }
   .wrapper footer .footer-content .footer-address h3 {
-    margin: 1em 0 0 .5em;
+    margin: 1em 0 0 0;
     font-size: 2em;
     letter-spacing: .25em;
     text-transform: uppercase;
-    color: turquoise;
   }
   .wrapper footer .footer-content .footer-address .footer-contact {
     -webkit-box-pack: left;
