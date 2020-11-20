@@ -7,6 +7,7 @@
 
         h1{
             font-size: 4em;
+            color: yellowgreen;
         }
 
         img{
@@ -29,8 +30,7 @@
                     width: 100%;
 
                     .list-comments{
-                        position: relative;
-                        border: 3px solid red;
+                        display: none;
                     }
                 }
             }

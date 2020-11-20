@@ -9,26 +9,24 @@ $white-color: #fff;
 
 @include respond-to('bp3'){
 
-    background-color: $main-color;
-
-    svg{
-        display: none;
-    }
-
     .footer-content{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 1em 2em;
+        padding: 2em 2em;
         box-sizing: border-box;
+        background-color: transparent;
+        border: 1px solid green;
+
 
         .footer-address{
+            border: 1px solid green;
             height: 100%;
             text-align: left;
 
             h3{
-                margin: .25em 0 0 .5em;
+                margin: 1em 0 0 .5em;
                 font-size: 2em;
                 letter-spacing: .25em;
                 text-transform: uppercase;

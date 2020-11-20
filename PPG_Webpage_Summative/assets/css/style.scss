@@ -362,14 +362,9 @@ $white-color: #fff;
     footer{
         position: relative;
         width: 100vw;
-
-        svg{
-            position: absolute;
-            z-index: 5;
-            width: 100%;
-            height: auto;
-            fill: $main-color;
-        }
+        background-image: url('/PPG_Webpage_Summative/assets/img/backgrounds/footer-background.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
 
         .footer-content{
             position: relative;

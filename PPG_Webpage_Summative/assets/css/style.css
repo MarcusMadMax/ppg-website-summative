@@ -551,6 +551,9 @@
   .wrapper main .link-section ul li .list-items {
     width: 100%;
   }
+  .wrapper main .link-section ul li .list-items .list-comments {
+    display: none;
+  }
   .wrapper main .main-section {
     height: 100vh;
   }
@@ -590,6 +593,9 @@
   .wrapper main .solutions-section .solutions-section-content ul li .list-items {
     width: 100%;
   }
+  .wrapper main .solutions-section .solutions-section-content ul li .list-comments {
+    display: none;
+  }
   .wrapper main .solutions-section .solutions-section-content a .view-more {
     width: 10%;
   }
@@ -598,14 +604,9 @@
 .wrapper footer {
   position: relative;
   width: 100vw;
-}
-
-.wrapper footer svg {
-  position: absolute;
-  z-index: 5;
-  width: 100%;
-  height: auto;
-  fill: #1A1B26;
+  background-image: url("/PPG_Webpage_Summative/assets/img/backgrounds/footer-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrapper footer .footer-content {
@@ -692,16 +693,7 @@
 }
 
 @media (min-width: 1200px) {
-  .wrapper footer {
-    background-color: #1A1B26;
-  }
-  .wrapper footer svg {
-    display: none;
-  }
   .wrapper footer .footer-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -712,19 +704,23 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 1em 2em;
+    padding: 2em 2em;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid green;
   }
   .wrapper footer .footer-content .footer-address {
+    border: 1px solid green;
     height: 100%;
     text-align: left;
   }
   .wrapper footer .footer-content .footer-address h3 {
-    margin: .25em 0 0 .5em;
+    margin: 1em 0 0 .5em;
     font-size: 2em;
     letter-spacing: .25em;
     text-transform: uppercase;
+    color: turquoise;
   }
   .wrapper footer .footer-content .footer-address .footer-contact {
     -webkit-box-pack: left;

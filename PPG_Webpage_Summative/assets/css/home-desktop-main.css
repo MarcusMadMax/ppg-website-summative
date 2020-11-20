@@ -4,6 +4,7 @@
   }
   .quote-section h1 {
     font-size: 4em;
+    color: yellowgreen;
   }
   .quote-section img {
     display: block;
@@ -28,8 +29,7 @@
     width: 100%;
   }
   .link-section ul li .list-items .list-comments {
-    position: relative;
-    border: 3px solid red;
+    display: none;
   }
   .main-section {
     height: 100vh;
