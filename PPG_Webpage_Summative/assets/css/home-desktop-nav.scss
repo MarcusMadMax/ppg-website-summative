@@ -1,0 +1,51 @@
+@import 'breakpoints';
+
+@include respond-to('bp3'){
+    .nav{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 6em;
+        background-color: $main-color;
+
+        .bars {
+            display: none;
+        }
+
+        .nav-content{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 2em;
+
+            .logo{
+                height: 6em;
+                display: flex;
+                align-items: center;
+                margin-top: 0;
+
+                img{
+                    text-align: center;
+                    height: 5em;
+                }
+            }
+
+            ul{
+                height: 5em;
+                display: flex;
+                align-items: center;
+
+                li{
+                    margin: 0 2em;
+
+                    a{
+                        color: $white-color;
+                        text-decoration: none;
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
