@@ -16,9 +16,9 @@ $(function () {
 
     var anime1 = anime({
         targets: ('.main-section .main-section-am-cup-boat'),
-        translateX: [0, '-50em'],
+        translateX: [0, '-40wv'],
         easing: 'linear',
-        duration: 10000,
+        duration: 1000,
         autoplay:false,
     })
 
@@ -26,7 +26,7 @@ $(function () {
     $(document).on('scroll',function(){
 
         var scrollTop = $(document).scrollTop()
-        var progress = (scrollTop - mainS)/10
+        var progress = (scrollTop - mainS)/50
         anime1.seek(anime1.duration * progress)
     })
 })
