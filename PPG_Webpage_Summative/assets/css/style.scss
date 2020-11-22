@@ -22,6 +22,7 @@ $white-color: #fff;
             padding: 0;
 
             a{
+                cursor: pointer;
 
                 img{
                     display: block;
@@ -30,6 +31,7 @@ $white-color: #fff;
                     width: 100%;
                     height: 40vh;
                     filter: grayscale(.6);
+                    mix-blend-mode: screen;
                 }
             }
 
@@ -51,11 +53,12 @@ $white-color: #fff;
                     text-shadow: -2px 2px 2px rgba($color: $main-color, $alpha: .5);
                 }
 
-                a{
-                    text-decoration: none;
+                button{
+                    @include the-buttons;
 
-                    button{
-                        @include the-buttons;
+                    a{
+                        text-decoration: none;
+                        color: $white-color;
                     }
                 }
             }
@@ -73,7 +76,6 @@ $white-color: #fff;
     display: block;
     margin: 0 auto;
     border-radius: 5em;
-    color: $white-color;
     background-color: rgba($color: $main-color, $alpha: 0.9);
     padding: .5em 0;
     box-sizing: border-box;
@@ -254,9 +256,8 @@ $white-color: #fff;
 
         .main-section{
             position: relative;
-            z-index: 50;
             width: 100vw;
-            height: 60vh;
+            height: 40vh;
 
             .main-section-bkg{
                 position: relative;
@@ -267,11 +268,21 @@ $white-color: #fff;
                 filter: brightness(80%);
             }
 
-            .main-section-img{
+            .main-section-am-cup-bkg{
                 position: absolute;
                 bottom: 0;
                 bottom: -3vh;
                 right: -100vw;
+                height: auto;
+                width: 250%;
+            }
+
+            .main-section-am-cup-boat{
+                position: absolute;
+                z-index: 5;
+                bottom: 0;
+                bottom: -3vh;
+                right: -50vw;
                 height: auto;
                 width: 250%;
             }
@@ -287,7 +298,7 @@ $white-color: #fff;
                 
                 h1{
                     position: relative;
-                    font-size: 6vw;
+                    font-size: 5vw;
                     font-weight: 300;
                     color: $white-color;
                     line-height: 1.25em;
@@ -325,6 +336,7 @@ $white-color: #fff;
                         text-align: center;
                         color: $ppg-blue;
                         padding: .5em 0;
+                        text-transform: uppercase;
                     }
 
                     .brush-stroke{
@@ -343,14 +355,16 @@ $white-color: #fff;
                     z-index: 5;
                 }
 
-                a{
-                    text-decoration: none;
-                    .view-more{
-                        @include the-buttons;
-                        width: 40%;
-                        padding: .5em;
-                        border: 6px solid $ppg-blue;
-                        margin-bottom: 1em;
+                .view-more{
+                    @include the-buttons;
+                    width: 40%;
+                    padding: .5em;
+                    border: 6px solid $ppg-blue;
+                    margin-bottom: 1em;
+
+                    a{
+                        text-decoration: none;
+                        color: $white-color;
                     }
                 }
             }

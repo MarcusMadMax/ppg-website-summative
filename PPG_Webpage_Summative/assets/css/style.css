@@ -250,6 +250,10 @@
   padding: 0;
 }
 
+.wrapper main .link-section ul li .list-items a {
+  cursor: pointer;
+}
+
 .wrapper main .link-section ul li .list-items a img {
   display: block;
   -o-object-fit: cover;
@@ -260,6 +264,7 @@
   height: 40vh;
   -webkit-filter: grayscale(0.6);
           filter: grayscale(0.6);
+  mix-blend-mode: screen;
 }
 
 .wrapper main .link-section ul li .list-items .list-comments {
@@ -288,11 +293,7 @@
   text-shadow: -2px 2px 2px rgba(26, 27, 38, 0.5);
 }
 
-.wrapper main .link-section ul li .list-items .list-comments a {
-  text-decoration: none;
-}
-
-.wrapper main .link-section ul li .list-items .list-comments a button {
+.wrapper main .link-section ul li .list-items .list-comments button {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -302,7 +303,6 @@
   display: block;
   margin: 0 auto;
   border-radius: 5em;
-  color: #fff;
   background-color: rgba(26, 27, 38, 0.9);
   padding: .5em 0;
   -webkit-box-sizing: border-box;
@@ -311,15 +311,19 @@
   border: 1px solid #fff;
 }
 
-.wrapper main .link-section ul li .list-items .list-comments a button:hover {
+.wrapper main .link-section ul li .list-items .list-comments button:hover {
   cursor: pointer;
+}
+
+.wrapper main .link-section ul li .list-items .list-comments button a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .wrapper main .main-section {
   position: relative;
-  z-index: 50;
   width: 100vw;
-  height: 60vh;
+  height: 40vh;
 }
 
 .wrapper main .main-section .main-section-bkg {
@@ -333,11 +337,21 @@
           filter: brightness(80%);
 }
 
-.wrapper main .main-section .main-section-img {
+.wrapper main .main-section .main-section-am-cup-bkg {
   position: absolute;
   bottom: 0;
   bottom: -3vh;
   right: -100vw;
+  height: auto;
+  width: 250%;
+}
+
+.wrapper main .main-section .main-section-am-cup-boat {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  bottom: -3vh;
+  right: -50vw;
   height: auto;
   width: 250%;
 }
@@ -356,7 +370,7 @@
 
 .wrapper main .main-section .main-section-txt h1 {
   position: relative;
-  font-size: 6vw;
+  font-size: 5vw;
   font-weight: 300;
   color: #fff;
   line-height: 1.25em;
@@ -395,6 +409,7 @@
   text-align: center;
   color: #0A57A4;
   padding: .5em 0;
+  text-transform: uppercase;
 }
 
 .wrapper main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke {
@@ -427,6 +442,10 @@
   padding: 0;
 }
 
+.wrapper main .solutions-section .solutions-section-content ul li .list-items a {
+  cursor: pointer;
+}
+
 .wrapper main .solutions-section .solutions-section-content ul li .list-items a img {
   display: block;
   -o-object-fit: cover;
@@ -437,6 +456,7 @@
   height: 40vh;
   -webkit-filter: grayscale(0.6);
           filter: grayscale(0.6);
+  mix-blend-mode: screen;
 }
 
 .wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments {
@@ -465,11 +485,7 @@
   text-shadow: -2px 2px 2px rgba(26, 27, 38, 0.5);
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments a {
-  text-decoration: none;
-}
-
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments a button {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -479,7 +495,6 @@
   display: block;
   margin: 0 auto;
   border-radius: 5em;
-  color: #fff;
   background-color: rgba(26, 27, 38, 0.9);
   padding: .5em 0;
   -webkit-box-sizing: border-box;
@@ -488,15 +503,16 @@
   border: 1px solid #fff;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments a button:hover {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button:hover {
   cursor: pointer;
 }
 
-.wrapper main .solutions-section .solutions-section-content a {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button a {
   text-decoration: none;
+  color: #fff;
 }
 
-.wrapper main .solutions-section .solutions-section-content a .view-more {
+.wrapper main .solutions-section .solutions-section-content .view-more {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -506,7 +522,6 @@
   display: block;
   margin: 0 auto;
   border-radius: 5em;
-  color: #fff;
   background-color: rgba(26, 27, 38, 0.9);
   padding: .5em 0;
   -webkit-box-sizing: border-box;
@@ -519,8 +534,13 @@
   margin-bottom: 1em;
 }
 
-.wrapper main .solutions-section .solutions-section-content a .view-more:hover {
+.wrapper main .solutions-section .solutions-section-content .view-more:hover {
   cursor: pointer;
+}
+
+.wrapper main .solutions-section .solutions-section-content .view-more a {
+  text-decoration: none;
+  color: #fff;
 }
 
 @media (min-width: 1200px) {
@@ -557,12 +577,17 @@
     display: none;
   }
   .wrapper main .main-section {
-    height: 100vh;
+    height: 95vh;
   }
-  .wrapper main .main-section .main-section-img {
+  .wrapper main .main-section .main-section-am-cup-bkg {
     bottom: -5vh;
-    right: -80vw;
-    width: 200%;
+    right: -70vw;
+    width: 170vw;
+  }
+  .wrapper main .main-section .main-section-am-cup-boat {
+    bottom: -5vh;
+    right: -50vw;
+    width: 170vw;
   }
   .wrapper main .main-section .main-section-txt {
     width: 60vw;
@@ -579,6 +604,7 @@
     width: 30vw;
   }
   .wrapper main .solutions-section .solutions-section-content ul {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -595,12 +621,47 @@
   .wrapper main .solutions-section .solutions-section-content ul li .list-items {
     width: 100%;
   }
-  .wrapper main .solutions-section .solutions-section-content ul li .list-comments {
+  .wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments {
     display: none;
   }
-  .wrapper main .solutions-section .solutions-section-content a .view-more {
+  .wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments-cricket {
+    border: 3px solid red;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments-cricket h2 {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: .25em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .wrapper main .solutions-section .solutions-section-content ul li .list-items :hover + .list-comments-sporting {
+    display: block;
+    position: relative;
+    z-index: 50;
+    -webkit-filter: brightness(20%);
+            filter: brightness(20%);
+  }
+  .wrapper main .solutions-section .solutions-section-content .view-more {
     width: 10%;
   }
+}
+
+.wrapper main .list-comments-color {
+  opacity: 50%;
+  border: 2px solid red;
 }
 
 .wrapper footer {
@@ -695,6 +756,7 @@
 
 @media (min-width: 1200px) {
   .wrapper footer .footer-content {
+    height: 20em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -713,12 +775,9 @@
             box-sizing: border-box;
   }
   .wrapper footer .footer-content .footer-address {
-    height: 100%;
-    height: 100%;
     text-align: left;
   }
   .wrapper footer .footer-content .footer-address h3 {
-    margin: 1em 0 0 0;
     font-size: 2em;
     letter-spacing: .25em;
     text-transform: uppercase;
@@ -739,7 +798,7 @@
     color: #FA0029;
   }
   .wrapper footer .footer-content .footer-address .footer-contact .fa-envelope, .wrapper footer .footer-content .footer-address .footer-contact .fa-mobile-alt {
-    font-size: 3em;
+    font-size: 2em;
     width: 1.5em;
     text-align: center;
   }
@@ -762,8 +821,11 @@
     -webkit-text-stroke-color: #fff;
   }
   .wrapper footer .footer-content .footer-links {
-    padding: 0;
+    padding: 2em 0;
     margin-top: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: transparent;
   }
   .wrapper footer .footer-content .footer-links ul {
     display: -webkit-box;
@@ -779,7 +841,7 @@
   .wrapper footer .footer-content .footer-links ul li a {
     font-size: 1.5em;
     display: block;
-    margin: .5em 0;
+    margin: .25em 0;
     font-weight: 300;
     letter-spacing: .25em;
     text-align: right;
