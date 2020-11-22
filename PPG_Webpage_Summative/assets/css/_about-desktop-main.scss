@@ -1,0 +1,77 @@
+$highkight-color: #FA0029;
+$ppg-blue: #0A57A4;
+$main-color: #1A1B26;
+$highlight-color: #FBFBFB;
+$white-color: #fff;
+
+@import 'breakpoints';
+
+@include respond-to('bp3'){
+
+    .top-section{
+        height: 80vh;
+        width: 100vw;
+        overflow-y: hidden;
+
+        .main-img{
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+    
+    .about-section{
+        width: 100vw;
+        margin-top: 80vh;
+
+        .the-header{
+            width: 50%;
+            margin: 0 auto;
+
+            h1{
+                font-size: 3em;
+                text-align: left;
+                color: $ppg-blue;
+            }
+        }
+
+        .the-paragraph{
+            width: 60vw;
+            margin: 1em auto;
+            font-size: 2em;
+
+            ul{
+                margin: 2em 0;
+                li{
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    margin: 1em 0;
+                }
+            }
+        }
+    }
+
+    .clients-section{
+        position: relative;
+        z-index: 5;
+
+        .clients-section-content{
+
+            .clients-section-content-header{
+
+                h1{
+                    font-size: 6em;
+                }
+
+                .brush-stroke{
+                    width: 40vw;
+                }
+            }
+
+            .clients{
+                padding: 4em 0;
+            }
+        }
+    }
+}

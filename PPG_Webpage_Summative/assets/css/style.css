@@ -16,7 +16,6 @@
   top: 0;
   z-index: 90;
   width: 100vw;
-  background-color: #1A1B26;
 }
 
 .wrapper header .nav .bars {
@@ -53,25 +52,26 @@
 }
 
 .wrapper header .nav .change .bar1 {
-  -webkit-transform: rotate(45deg) translate(0.9em, 1em);
-          transform: rotate(45deg) translate(0.9em, 1em);
-  color: #FBFBFB;
+  -webkit-transform: rotate(45deg) translate(0.7em, 1em);
+          transform: rotate(45deg) translate(0.7em, 1em);
+  color: #dddcdc;
 }
 
 .wrapper header .nav .change .bar2 {
   opacity: 0;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  color: #FBFBFB;
+  color: #dddcdc;
 }
 
 .wrapper header .nav .change .bar3 {
-  -webkit-transform: rotate(-45deg) translate(0.9em, -1em);
-          transform: rotate(-45deg) translate(0.9em, -1em);
-  color: #FBFBFB;
+  -webkit-transform: rotate(-45deg) translate(0.7em, -1em);
+          transform: rotate(-45deg) translate(0.7em, -1em);
+  color: #dddcdc;
 }
 
 .wrapper header .nav .nav-content {
+  position: relative;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,11 +82,14 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background-color: #1A1B26;
+  display: none;
 }
 
 .wrapper header .nav .nav-content .logo {
   text-align: center;
   margin-top: 5em;
+  opacity: 0;
 }
 
 .wrapper header .nav .nav-content .logo img {
@@ -104,6 +107,8 @@
 }
 
 .wrapper header .nav .nav-content ul li {
+  position: relative;
+  left: -20em;
   margin: 2em 0;
 }
 
@@ -111,7 +116,7 @@
   font-weight: 300;
   color: #fff;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 3em;
   padding-bottom: .5em;
   border-bottom: 1px solid transparent;
 }
@@ -124,7 +129,6 @@
 @media (min-width: 1200px) {
   .wrapper header .nav {
     display: block;
-    position: absolute;
     top: 0;
     left: 0;
     height: 6em;
@@ -145,6 +149,7 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 0 2em;
+    background-color: transparent;
   }
   .wrapper header .nav .nav-content .logo {
     height: 6em;
@@ -155,6 +160,7 @@
         -ms-flex-align: center;
             align-items: center;
     margin-top: 0;
+    opacity: 1;
   }
   .wrapper header .nav .nav-content .logo img {
     text-align: center;
@@ -170,7 +176,9 @@
             align-items: center;
   }
   .wrapper header .nav .nav-content ul li {
+    left: 0;
     margin: 0 2em;
+    opacity: 1;
   }
   .wrapper header .nav .nav-content ul li a {
     color: #fff;
@@ -376,11 +384,11 @@
   line-height: 1.25em;
 }
 
-.wrapper main .solutions-section {
+.wrapper main .solutions-section, .wrapper main .clients-section {
   position: relative;
 }
 
-.wrapper main .solutions-section .solutions-section-bg-img {
+.wrapper main .solutions-section .solutions-section-bg-img, .wrapper main .solutions-section .clients-section-bg-img, .wrapper main .clients-section .solutions-section-bg-img, .wrapper main .clients-section .clients-section-bg-img {
   position: fixed;
   z-index: -1;
   top: 0;
@@ -391,19 +399,19 @@
   display: block;
 }
 
-.wrapper main .solutions-section .solutions-section-bg-img img {
+.wrapper main .solutions-section .solutions-section-bg-img img, .wrapper main .solutions-section .clients-section-bg-img img, .wrapper main .clients-section .solutions-section-bg-img img, .wrapper main .clients-section .clients-section-bg-img img {
   height: 100%;
 }
 
-.wrapper main .solutions-section .solutions-section-content {
+.wrapper main .solutions-section .solutions-section-content, .wrapper main .solutions-section .clients-section-content, .wrapper main .clients-section .solutions-section-content, .wrapper main .clients-section .clients-section-content {
   width: 100%;
 }
 
-.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header {
+.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header, .wrapper main .solutions-section .solutions-section-content .clients-section-content-header, .wrapper main .solutions-section .clients-section-content .solutions-section-content-header, .wrapper main .solutions-section .clients-section-content .clients-section-content-header, .wrapper main .clients-section .solutions-section-content .solutions-section-content-header, .wrapper main .clients-section .solutions-section-content .clients-section-content-header, .wrapper main .clients-section .clients-section-content .solutions-section-content-header, .wrapper main .clients-section .clients-section-content .clients-section-content-header {
   position: relative;
 }
 
-.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header h1 {
+.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header h1, .wrapper main .solutions-section .solutions-section-content .clients-section-content-header h1, .wrapper main .solutions-section .clients-section-content .solutions-section-content-header h1, .wrapper main .solutions-section .clients-section-content .clients-section-content-header h1, .wrapper main .clients-section .solutions-section-content .solutions-section-content-header h1, .wrapper main .clients-section .solutions-section-content .clients-section-content-header h1, .wrapper main .clients-section .clients-section-content .solutions-section-content-header h1, .wrapper main .clients-section .clients-section-content .clients-section-content-header h1 {
   position: relative;
   z-index: 5;
   text-align: center;
@@ -412,7 +420,7 @@
   text-transform: uppercase;
 }
 
-.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke {
+.wrapper main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke, .wrapper main .solutions-section .solutions-section-content .clients-section-content-header .brush-stroke, .wrapper main .solutions-section .clients-section-content .solutions-section-content-header .brush-stroke, .wrapper main .solutions-section .clients-section-content .clients-section-content-header .brush-stroke, .wrapper main .clients-section .solutions-section-content .solutions-section-content-header .brush-stroke, .wrapper main .clients-section .solutions-section-content .clients-section-content-header .brush-stroke, .wrapper main .clients-section .clients-section-content .solutions-section-content-header .brush-stroke, .wrapper main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
   position: absolute;
   z-index: 4;
   bottom: .5em;
@@ -422,7 +430,7 @@
   width: 60vw;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul {
+.wrapper main .solutions-section .solutions-section-content ul, .wrapper main .solutions-section .clients-section-content ul, .wrapper main .clients-section .solutions-section-content ul, .wrapper main .clients-section .clients-section-content ul {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,18 +443,18 @@
   z-index: 5;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items, .wrapper main .solutions-section .clients-section-content ul li .list-items, .wrapper main .clients-section .solutions-section-content ul li .list-items, .wrapper main .clients-section .clients-section-content ul li .list-items {
   position: relative;
   width: 100vw;
   height: 100%;
   padding: 0;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items a {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items a, .wrapper main .solutions-section .clients-section-content ul li .list-items a, .wrapper main .clients-section .solutions-section-content ul li .list-items a, .wrapper main .clients-section .clients-section-content ul li .list-items a {
   cursor: pointer;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items a img {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items a img, .wrapper main .solutions-section .clients-section-content ul li .list-items a img, .wrapper main .clients-section .solutions-section-content ul li .list-items a img, .wrapper main .clients-section .clients-section-content ul li .list-items a img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -459,7 +467,7 @@
   mix-blend-mode: screen;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments, .wrapper main .solutions-section .clients-section-content ul li .list-items .list-comments, .wrapper main .clients-section .solutions-section-content ul li .list-items .list-comments, .wrapper main .clients-section .clients-section-content ul li .list-items .list-comments {
   position: absolute;
   top: 0;
   width: 100%;
@@ -476,7 +484,7 @@
           justify-content: center;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments p {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments p, .wrapper main .solutions-section .clients-section-content ul li .list-items .list-comments p, .wrapper main .clients-section .solutions-section-content ul li .list-items .list-comments p, .wrapper main .clients-section .clients-section-content ul li .list-items .list-comments p {
   color: #fff;
   font-size: 2em;
   text-align: center;
@@ -485,7 +493,7 @@
   text-shadow: -2px 2px 2px rgba(26, 27, 38, 0.5);
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button, .wrapper main .solutions-section .clients-section-content ul li .list-items .list-comments button, .wrapper main .clients-section .solutions-section-content ul li .list-items .list-comments button, .wrapper main .clients-section .clients-section-content ul li .list-items .list-comments button {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -503,16 +511,16 @@
   border: 1px solid #fff;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button:hover {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button:hover, .wrapper main .solutions-section .clients-section-content ul li .list-items .list-comments button:hover, .wrapper main .clients-section .solutions-section-content ul li .list-items .list-comments button:hover, .wrapper main .clients-section .clients-section-content ul li .list-items .list-comments button:hover {
   cursor: pointer;
 }
 
-.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button a {
+.wrapper main .solutions-section .solutions-section-content ul li .list-items .list-comments button a, .wrapper main .solutions-section .clients-section-content ul li .list-items .list-comments button a, .wrapper main .clients-section .solutions-section-content ul li .list-items .list-comments button a, .wrapper main .clients-section .clients-section-content ul li .list-items .list-comments button a {
   text-decoration: none;
   color: #fff;
 }
 
-.wrapper main .solutions-section .solutions-section-content .view-more {
+.wrapper main .solutions-section .solutions-section-content .view-more, .wrapper main .solutions-section .clients-section-content .view-more, .wrapper main .clients-section .solutions-section-content .view-more, .wrapper main .clients-section .clients-section-content .view-more {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -534,13 +542,102 @@
   margin-bottom: 1em;
 }
 
-.wrapper main .solutions-section .solutions-section-content .view-more:hover {
+.wrapper main .solutions-section .solutions-section-content .view-more:hover, .wrapper main .solutions-section .clients-section-content .view-more:hover, .wrapper main .clients-section .solutions-section-content .view-more:hover, .wrapper main .clients-section .clients-section-content .view-more:hover {
   cursor: pointer;
 }
 
-.wrapper main .solutions-section .solutions-section-content .view-more a {
+.wrapper main .solutions-section .solutions-section-content .view-more a, .wrapper main .solutions-section .clients-section-content .view-more a, .wrapper main .clients-section .solutions-section-content .view-more a, .wrapper main .clients-section .clients-section-content .view-more a {
   text-decoration: none;
   color: #fff;
+}
+
+.wrapper main .top-section {
+  position: fixed;
+  top: 0;
+}
+
+.wrapper main .top-section img {
+  display: block;
+}
+
+.wrapper main .about-section {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  margin-top: 60vh;
+  padding: 2em 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
+  background-blend-mode: screen;
+  background-color: #dddcdc;
+}
+
+.wrapper main .about-section .clients-section-bg-img {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100vw;
+  height: 150vh;
+  -webkit-filter: opacity(0.2);
+          filter: opacity(0.2);
+  display: block;
+}
+
+.wrapper main .about-section .clients-section-bg-img img {
+  height: 100%;
+}
+
+.wrapper main .about-section .the-header {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper main .about-section .the-header h1 {
+  text-align: left;
+  color: #0A57A4;
+}
+
+.wrapper main .about-section .the-paragraph {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.wrapper main .about-section .the-paragraph p {
+  color: #1A1B26;
+}
+
+.wrapper main .image-section {
+  position: relative;
+  z-index: 6;
+}
+
+.wrapper main .image-section img {
+  width: 100%;
+  display: block;
+}
+
+.wrapper main .clients-section .clients-section-content {
+  background-color: #fff;
+}
+
+.wrapper main .clients-section .clients-section-content .clients {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper main .clients-section .clients-section-content .clients img {
+  border: 1px solid transparent;
+  width: 20vw;
+  height: auto;
+  display: block;
+  margin: 1em auto;
 }
 
 @media (min-width: 1200px) {
@@ -586,7 +683,7 @@
   }
   .wrapper main .main-section .main-section-am-cup-boat {
     bottom: -5vh;
-    right: -10vw;
+    right: -60vw;
     width: 170vw;
   }
   .wrapper main .main-section .main-section-txt {
@@ -664,12 +761,63 @@
   border: 2px solid red;
 }
 
+@media (min-width: 1200px) {
+  .wrapper main .top-section {
+    height: 80vh;
+    width: 100vw;
+    overflow-y: hidden;
+  }
+  .wrapper main .top-section .main-img img {
+    width: 100%;
+  }
+  .wrapper main .about-section {
+    width: 100vw;
+    margin-top: 80vh;
+  }
+  .wrapper main .about-section .the-header {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .wrapper main .about-section .the-header h1 {
+    font-size: 3em;
+    text-align: left;
+    color: #0A57A4;
+  }
+  .wrapper main .about-section .the-paragraph {
+    width: 60vw;
+    margin: 1em auto;
+    font-size: 2em;
+  }
+  .wrapper main .about-section .the-paragraph ul {
+    margin: 2em 0;
+  }
+  .wrapper main .about-section .the-paragraph ul li {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 1em 0;
+  }
+  .wrapper main .clients-section {
+    position: relative;
+    z-index: 5;
+  }
+  .wrapper main .clients-section .clients-section-content .clients-section-content-header h1 {
+    font-size: 6em;
+  }
+  .wrapper main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+    width: 40vw;
+  }
+  .wrapper main .clients-section .clients-section-content .clients {
+    padding: 4em 0;
+  }
+}
+
 .wrapper footer {
   position: relative;
   width: 100vw;
   background-image: url("../img/backgrounds/footer-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #fff;
 }
 
 .wrapper footer .footer-content {
@@ -752,6 +900,10 @@
   text-decoration: none;
   color: #fff;
   font-size: 1.2em;
+}
+
+.wrapper footer .footer-content .color {
+  display: none;
 }
 
 @media (min-width: 1200px) {
@@ -850,6 +1002,18 @@
   }
   .wrapper footer .footer-content .footer-links ul li a:hover {
     color: #FA0029;
+  }
+  .wrapper footer .footer-content .color {
+    position: absolute;
+    display: block;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 2em;
+    background-color: #1A1B26;
+    color: #fff;
+    font-size: 5em;
   }
 }
 /*# sourceMappingURL=style.css.map */

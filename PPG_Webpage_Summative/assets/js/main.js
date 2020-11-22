@@ -1,3 +1,71 @@
+//Timeline for logo to move up & navigation to move in / out
+var moveIn = anime.timeline({
+    easing: 'spring(1, 80, 10, 0)',
+    autoplay: false,
+    duration: 0.1,
+})
+
+moveIn
+    .add({
+        targets: '.nav-content',
+        scale: 1,
+        easing: 'linear'
+    }, 400)
+
+    .add({
+        targets: '.nav-content li',
+        translateX: 300,
+        delay: anime.stagger(500),
+        opacity: 1,
+    }, 800)
+
+    .add({
+        targets: '.nav-content .logo',
+        opacity: 1,
+        duration: 10,
+        autoplay: false,
+    }, 900)
+
+
+
+var moveOut = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: .1,
+})
+
+//Timelie Move Out
+// moveOut
+//     .add({
+//         targets: '.nav .nav-content',
+//         scale: 0,
+//     })
+
+//Changing hamburger / bars Move In / Move Out Execution
+const barsBtn = document.querySelector('.bars')
+let menuOpen = false
+barsBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+        moveIn.play()
+        barsBtn.classList.add('change')
+        menuOpen = true
+    } else {
+        moveOut.play()
+        barsBtn.classList.remove('change')
+        menuOpen = false
+    }
+})
+
+//Blending nav out when clicking link
+let linkBtn = document.querySelectorAll('.nav-content ul li a')
+for (i = 0; i < linkBtn.length; i++) {
+    let link = linkBtn[i]
+    link.addEventListener('click', () => {
+        moveOut.play()
+        barsBtn.classList.remove('change')
+        menuOpen = false
+    })
+}
+
 const listComment = document.querySelector('List-comment-cricket')
 
 function linksHover (){
@@ -30,3 +98,4 @@ $(function () {
         anime1.seek(anime1.duration * progress)
     })
 })
+

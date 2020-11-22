@@ -5,7 +5,7 @@
 $highkight-color: #FA0029;
 $ppg-blue: #0A57A4;
 $main-color: #1A1B26;
-$highlight-color: #FBFBFB;
+$highlight-color: #dddcdc;
 $white-color: #fff;
 
 @mixin image-links {
@@ -110,7 +110,6 @@ $white-color: #fff;
             top: 0;
             z-index: 90;
             width: 100vw;
-            background-color: $main-color;
 
             .bars {
                 position: fixed;
@@ -137,7 +136,7 @@ $white-color: #fff;
             }
     
             .change .bar1 {
-                transform: rotate(45deg) translate(0.9em, 1em);
+                transform: rotate(45deg) translate(.7em, 1em);
                 color: $highlight-color;
             }
     
@@ -148,19 +147,23 @@ $white-color: #fff;
             }
     
             .change .bar3 {
-                transform: rotate(-45deg) translate(0.9em, -1em);
+                transform: rotate(-45deg) translate(0.7em, -1em);
                 color: $highlight-color;
             }
 
             .nav-content{
+                position: relative;
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                background-color: $main-color;
+                display: none;
 
                 .logo{
                     text-align: center;
                     margin-top: 5em;
+                    opacity: 0;
 
                     img{
                         text-align: center;
@@ -176,13 +179,15 @@ $white-color: #fff;
                     margin-bottom: 5em;
 
                     li{
+                        position: relative;
+                        left: -20em;
                         margin: 2em 0;
 
                         a{
                             font-weight: 300;
                             color: $white-color;
                             text-decoration: none;
-                            font-size: 1em;
+                            font-size: 3em;
                             padding-bottom: .5em;
                             border-bottom: 1px solid transparent;
 
@@ -196,12 +201,13 @@ $white-color: #fff;
             }
         }
 
-        @import 'home-desktop-nav';
+        @import 'desktop-nav';
     }
 
     main{
         width: 100vw;
 
+        // Home Page
         .video-section{
             position: relative;
             z-index: 5;
@@ -306,10 +312,10 @@ $white-color: #fff;
             }
         }
 
-        .solutions-section{
+        .solutions-section, .clients-section{
             position: relative;
 
-            .solutions-section-bg-img{
+            .solutions-section-bg-img, .clients-section-bg-img{
                 position: fixed;
                 z-index: -1;
                 top: 0;
@@ -324,10 +330,10 @@ $white-color: #fff;
                 display: block;
             }
 
-            .solutions-section-content{
+            .solutions-section-content, .clients-section-content{
                 width: 100%;
 
-                .solutions-section-content-header{
+                .solutions-section-content-header, .clients-section-content-header{
                     position: relative;
 
                     h1{
@@ -370,7 +376,95 @@ $white-color: #fff;
             }
         }
 
+        //About Page
+        .top-section{
+            position: fixed;
+            top: 0;
+
+            img{
+                display: block;
+            }
+        }
+
+        .about-section{
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            margin-top: 60vh;
+            padding: 2em 0;
+            box-sizing: border-box;
+            background-image: url('../img/queens-warft/1904-queens-wharf-queens-street.jpg');
+            background-blend-mode: screen;
+            background-color: $highlight-color;
+
+            .clients-section-bg-img{
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                width: 100vw;
+                height: 150vh;
+
+                img{
+                    height: 100%;
+                }
+                
+                filter: opacity(0.2);
+                display: block;
+            }
+    
+            .the-header{
+                width: 80%;
+                margin: 0 auto;
+    
+                h1{
+                    text-align: left;
+                    color: $ppg-blue;
+                }
+            }
+
+            .the-paragraph{
+                width: 80%;
+                margin: 0 auto;
+                padding: 1em 0;
+
+                p{
+                    color: $main-color;
+                }
+            }
+        }
+
+        .image-section{
+            position: relative;
+            z-index: 6;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+        .clients-section{
+
+            .clients-section-content{
+                background-color: $white-color;
+
+                .clients{
+                    width: 80%;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    img{
+                        border: 1px solid transparent;
+                        width: 20vw;
+                        height: auto;
+                        display: block;
+                        margin: 1em auto;
+                    }
+                }
+            }
+        }
+
         @import 'home-desktop-main';
+        @import 'about-desktop-main';
     }
 
     footer{
@@ -379,6 +473,7 @@ $white-color: #fff;
         background-image: url('../img/backgrounds/footer-background.svg');
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: $white-color;
 
         .footer-content{
             position: relative;
@@ -454,8 +549,12 @@ $white-color: #fff;
                   
                 }
             }
+
+            .color{
+                display: none;
+            }
         }
-        @import 'home-desktop-footer';
+        @import 'desktop-footer';
     }
 }
 

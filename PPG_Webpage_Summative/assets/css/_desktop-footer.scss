@@ -101,6 +101,18 @@ $white-color: #fff;
               
             }
         }
-    }
 
+        .color{
+            position: absolute;
+            display: block;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 2em;
+            background-color: $main-color;
+            color: $white-color;
+            font-size: 5em;
+        }
+    }
 }
