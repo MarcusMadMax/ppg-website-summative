@@ -83,13 +83,12 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #1A1B26;
-  display: none;
+  opacity: 1;
 }
 
 .wrapper header .nav .nav-content .logo {
   text-align: center;
   margin-top: 5em;
-  opacity: 0;
 }
 
 .wrapper header .nav .nav-content .logo img {
@@ -108,36 +107,43 @@
 
 .wrapper header .nav .nav-content ul li {
   position: relative;
-  left: -20em;
+  width: 100vw;
+  left: -100vw;
   margin: 2em 0;
 }
 
 .wrapper header .nav .nav-content ul li a {
+  display: block;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
   font-size: 3em;
   padding-bottom: .5em;
-  border-bottom: 1px solid transparent;
 }
 
-.wrapper header .nav .nav-content ul li a:hover {
-  color: #FA0029;
-  border-bottom: 1px solid #FA0029;
+@media (min-width: 45em) {
+  .wrapper header .nav .nav-content .logo a img {
+    width: 60vw;
+  }
+  .wrapper header .nav .nav-content ul {
+    position: relative;
+    width: 100vw;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .wrapper header .nav {
-    display: block;
-    top: 0;
-    left: 0;
-    height: 6em;
-    background-color: #1A1B26;
+    position: fixed;
   }
   .wrapper header .nav .bars {
     display: none;
   }
   .wrapper header .nav .nav-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 6em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -148,10 +154,11 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 0 2em;
-    background-color: transparent;
+    opacity: 1 !important;
   }
   .wrapper header .nav .nav-content .logo {
+    position: relative;
+    z-index: 100;
     height: 6em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -160,13 +167,14 @@
         -ms-flex-align: center;
             align-items: center;
     margin-top: 0;
-    opacity: 1;
   }
   .wrapper header .nav .nav-content .logo img {
     text-align: center;
     height: 5em;
   }
   .wrapper header .nav .nav-content ul {
+    position: relative;
+    right: 0;
     height: 5em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -176,14 +184,21 @@
             align-items: center;
   }
   .wrapper header .nav .nav-content ul li {
+    position: relative;
     left: 0;
-    margin: 0 2em;
+    padding: 0 2em;
     opacity: 1;
   }
   .wrapper header .nav .nav-content ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.25em;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .wrapper header .nav .nav-content ul li a:hover {
+    color: #FA0029;
+    border-bottom: 1px solid #FA0029;
   }
 }
 
@@ -359,7 +374,7 @@
   z-index: 5;
   bottom: 0;
   bottom: -3vh;
-  right: -50vw;
+  right: -60vw;
   height: auto;
   width: 250%;
 }
@@ -384,8 +399,14 @@
   line-height: 1.25em;
 }
 
+.wrapper main .main-section .list-comments-color {
+  opacity: 50%;
+  border: 2px solid red;
+}
+
 .wrapper main .solutions-section, .wrapper main .clients-section {
   position: relative;
+  padding-top: 2em;
 }
 
 .wrapper main .solutions-section .solutions-section-bg-img, .wrapper main .solutions-section .clients-section-bg-img, .wrapper main .clients-section .solutions-section-bg-img, .wrapper main .clients-section .clients-section-bg-img {
@@ -551,96 +572,16 @@
   color: #fff;
 }
 
-.wrapper main .top-section {
-  position: fixed;
-  top: 0;
+@media (min-width: 45em) {
+  .wrapper main .quote-section h1 {
+    font-size: 3em;
+  }
+  .wrapper main .solutions-section .solutions-section-content-header h1 {
+    font-size: 4em;
+  }
 }
 
-.wrapper main .top-section img {
-  display: block;
-}
-
-.wrapper main .about-section {
-  position: relative;
-  width: 100vw;
-  height: 100%;
-  margin-top: 60vh;
-  padding: 2em 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
-  background-blend-mode: screen;
-  background-color: #dddcdc;
-}
-
-.wrapper main .about-section .clients-section-bg-img {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  width: 100vw;
-  height: 150vh;
-  -webkit-filter: opacity(0.2);
-          filter: opacity(0.2);
-  display: block;
-}
-
-.wrapper main .about-section .clients-section-bg-img img {
-  height: 100%;
-}
-
-.wrapper main .about-section .the-header {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.wrapper main .about-section .the-header h1 {
-  text-align: left;
-  color: #0A57A4;
-}
-
-.wrapper main .about-section .the-paragraph {
-  width: 80%;
-  margin: 0 auto;
-  padding: 1em 0;
-}
-
-.wrapper main .about-section .the-paragraph p {
-  color: #1A1B26;
-}
-
-.wrapper main .image-section {
-  position: relative;
-  z-index: 6;
-}
-
-.wrapper main .image-section img {
-  width: 100%;
-  display: block;
-}
-
-.wrapper main .clients-section .clients-section-content {
-  background-color: #fff;
-}
-
-.wrapper main .clients-section .clients-section-content .clients {
-  width: 80%;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.wrapper main .clients-section .clients-section-content .clients img {
-  border: 1px solid transparent;
-  width: 20vw;
-  height: auto;
-  display: block;
-  margin: 1em auto;
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .wrapper main .quote-section {
     height: 50vh;
   }
@@ -674,7 +615,7 @@
     display: none;
   }
   .wrapper main .main-section {
-    height: 95vh;
+    height: 100vh;
   }
   .wrapper main .main-section .main-section-am-cup-bkg {
     bottom: -5vh;
@@ -683,8 +624,8 @@
   }
   .wrapper main .main-section .main-section-am-cup-boat {
     bottom: -5vh;
-    right: -60vw;
-    width: 170vw;
+    right: -65vw;
+    width: 150vw;
   }
   .wrapper main .main-section .main-section-txt {
     width: 60vw;
@@ -756,23 +697,132 @@
   }
 }
 
-.wrapper main .list-comments-color {
-  opacity: 50%;
-  border: 2px solid red;
+.wrapper main .top-section {
+  position: fixed;
+  z-index: -10;
+  top: 0;
 }
 
-@media (min-width: 1200px) {
+.wrapper main .top-section img {
+  display: block;
+}
+
+.wrapper main .about-section {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  margin-top: 45vh;
+  padding: 2em 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #dddcdc;
+}
+
+.wrapper main .about-section .clients-section-bg-img {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100vw;
+  height: 150vh;
+  -webkit-filter: opacity(0.2);
+          filter: opacity(0.2);
+  display: block;
+}
+
+.wrapper main .about-section .clients-section-bg-img img {
+  height: 100%;
+}
+
+.wrapper main .about-section .the-header {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper main .about-section .the-header h1 {
+  text-align: left;
+  color: #0A57A4;
+}
+
+.wrapper main .about-section .the-paragraph {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.wrapper main .about-section .the-paragraph p {
+  color: #1A1B26;
+}
+
+.wrapper main .image-section {
+  position: relative;
+  z-index: 6;
+}
+
+.wrapper main .image-section img {
+  width: 100%;
+  display: block;
+}
+
+.wrapper main .clients-section .clients-section-content {
+  background-color: #fff;
+}
+
+.wrapper main .clients-section .clients-section-content .clients {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper main .clients-section .clients-section-content .clients img {
+  border: 1px solid transparent;
+  width: 20vw;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+.wrapper main .sustainability-section {
+  width: 100vw;
+  height: 100%;
+  padding: 1em;
+  background-color: #dddcdc;
+}
+
+.wrapper main .sustainability-section .sustainability-certification {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 75em) {
   .wrapper main .top-section {
     height: 80vh;
     width: 100vw;
     overflow-y: hidden;
   }
+  .wrapper main .top-section .main-img {
+    position: relative;
+    z-index: -1;
+  }
   .wrapper main .top-section .main-img img {
     width: 100%;
   }
   .wrapper main .about-section {
+    position: relative;
+    z-index: 5;
     width: 100vw;
     margin-top: 80vh;
+  }
+  .wrapper main .about-section .about-section-bg-img {
+    border: 1px solid red;
+    width: 100%;
   }
   .wrapper main .about-section .the-header {
     width: 50%;
@@ -809,6 +859,26 @@
   .wrapper main .clients-section .clients-section-content .clients {
     padding: 4em 0;
   }
+  .wrapper main .clients-section .clients-section-content .clients img {
+    width: 10vw;
+    height: auto;
+  }
+  .wrapper main .sustainability-section {
+    width: 100vw;
+    height: auto;
+  }
+  .wrapper main .sustainability-section .sustainability-certification {
+    width: 70%;
+    margin: 2em auto;
+  }
+  .wrapper main .sustainability-section .sustainability-certification h1 {
+    font-size: 4em;
+    color: #0A57A4;
+  }
+  .wrapper main .sustainability-section .sustainability-certification p {
+    font-size: 2em;
+    padding: 1em 0;
+  }
 }
 
 .wrapper footer {
@@ -817,22 +887,25 @@
   background-image: url("../img/backgrounds/footer-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #dddcdc;
+}
+
+.wrapper footer h3 {
+  color: #FA0029;
+  width: 90%;
+  font-size: 1.5em;
+  padding-top: 3em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .wrapper footer .footer-content {
   position: relative;
   z-index: 6;
-  padding-top: 2em;
 }
 
 .wrapper footer .footer-content .footer-address {
   text-align: center;
-}
-
-.wrapper footer .footer-content .footer-address h3 {
-  color: #FA0029;
-  margin: .5em;
 }
 
 .wrapper footer .footer-content .footer-address .footer-contact {
@@ -882,13 +955,13 @@
   -webkit-text-stroke-color: #FA0029;
 }
 
-.wrapper footer .footer-content .footer-links {
+.wrapper footer .footer-links {
   padding: 1em 0;
   margin-top: -10px;
   background-color: #1A1B26;
 }
 
-.wrapper footer .footer-content .footer-links ul {
+.wrapper footer .footer-links ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -896,18 +969,55 @@
       justify-content: space-around;
 }
 
-.wrapper footer .footer-content .footer-links ul li a {
+.wrapper footer .footer-links ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 1.2em;
 }
 
-.wrapper footer .footer-content .color {
+.wrapper footer .color {
   display: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 45em) {
+  .wrapper footer h3 {
+    font-size: 3em;
+    padding-top: 1em;
+  }
   .wrapper footer .footer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 0 6em;
+  }
+  .wrapper footer .footer-content .footer-address {
+    margin-top: 1.5em;
+  }
+  .wrapper footer .footer-content .footer-address .footer-contact {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    font-size: 1.5em;
+    margin: .25em 0;
+    padding: 0;
+  }
+  .wrapper footer .footer-content .footer-address .footer-contact i {
+    width: 1em;
+  }
+  .wrapper footer .footer-links ul li a {
+    font-size: 1.5em;
+    padding: 1em;
+    display: block;
+  }
+}
+
+@media (min-width: 75em) {
+  .wrapper footer {
     height: 20em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -926,13 +1036,13 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .wrapper footer .footer-content .footer-address {
-    text-align: left;
-  }
-  .wrapper footer .footer-content .footer-address h3 {
+  .wrapper footer .footer-content h3 {
     font-size: 2em;
     letter-spacing: .25em;
     text-transform: uppercase;
+  }
+  .wrapper footer .footer-content .footer-address {
+    text-align: left;
   }
   .wrapper footer .footer-content .footer-address .footer-contact {
     -webkit-box-pack: left;

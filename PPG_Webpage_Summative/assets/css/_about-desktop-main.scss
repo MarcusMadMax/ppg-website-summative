@@ -14,6 +14,8 @@ $white-color: #fff;
         overflow-y: hidden;
 
         .main-img{
+            position: relative;
+            z-index: -1;
 
             img{
                 width: 100%;
@@ -22,8 +24,16 @@ $white-color: #fff;
     }
     
     .about-section{
+        position: relative;
+        z-index: 5;
         width: 100vw;
         margin-top: 80vh;
+
+
+        .about-section-bg-img{
+            border: 1px solid red;
+            width: 100%;
+        }
 
         .the-header{
             width: 50%;
@@ -71,6 +81,31 @@ $white-color: #fff;
 
             .clients{
                 padding: 4em 0;
+
+                img{
+                    width: 10vw;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .sustainability-section{
+        width: 100vw;
+        height: auto;
+
+        .sustainability-certification{
+            width: 70%;
+            margin: 2em auto;
+
+            h1{
+                font-size: 4em;
+                color: $ppg-blue;
+            }
+
+            p{
+                font-size: 2em;
+                padding: 1em 0;
             }
         }
     }

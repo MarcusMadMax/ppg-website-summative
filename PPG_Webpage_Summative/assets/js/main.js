@@ -8,13 +8,13 @@ var moveIn = anime.timeline({
 moveIn
     .add({
         targets: '.nav-content',
-        scale: 1,
+        opacity: 1,
         easing: 'linear'
     }, 400)
 
     .add({
         targets: '.nav-content li',
-        translateX: 300,
+        translateX: ('100%'),
         delay: anime.stagger(500),
         opacity: 1,
     }, 800)
@@ -34,11 +34,11 @@ var moveOut = anime.timeline({
 })
 
 //Timelie Move Out
-// moveOut
-//     .add({
-//         targets: '.nav .nav-content',
-//         scale: 0,
-//     })
+moveOut
+    .add({
+        targets: '.nav .nav-content',
+        opacity: 0,
+    })
 
 //Changing hamburger / bars Move In / Move Out Execution
 const barsBtn = document.querySelector('.bars')
@@ -66,25 +66,26 @@ for (i = 0; i < linkBtn.length; i++) {
     })
 }
 
-const listComment = document.querySelector('List-comment-cricket')
+// const listComment = document.querySelector('List-comment-cricket')
 
-function linksHover (){
-    // if(listComment === 'none'){
+// function linksHover (){
+//     // if(listComment === 'none'){
 
-    // }else{
+//     // }else{
 
-    // }
-    console.log('click')
-}
+//     // }
+//     console.log('click')
+// }
 
-var showLinkComment = document.querySelector('li .list-items')
-showLinkComment.addEventListener('mouseover', linksHover)
-
+// var showLinkComment = document.querySelector('li .list-items')
+// showLinkComment.addEventListener('mouseover', linksHover)
+console.log('hi')
 $(function () {
 
+    console.log('hi')
     var anime1 = anime({
-        targets: ('.main-section .main-section-am-cup-boat'),
-        translateX: [0, '-40wv'],
+        targets: '.main-section-am-cup-boat',
+        translateX: [0, '-50vw'],
         easing: 'linear',
         duration: 1000,
         autoplay:false,
@@ -94,7 +95,7 @@ $(function () {
     $(document).on('scroll',function(){
 
         var scrollTop = $(document).scrollTop()
-        var progress = (scrollTop - mainS)/50
+        var progress = (scrollTop - (mainS-600))/900
         anime1.seek(anime1.duration * progress)
     })
 })
