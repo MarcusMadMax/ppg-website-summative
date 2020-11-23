@@ -79,10 +79,7 @@ for (i = 0; i < linkBtn.length; i++) {
 
 // var showLinkComment = document.querySelector('li .list-items')
 // showLinkComment.addEventListener('mouseover', linksHover)
-console.log('hi')
 $(function () {
-
-    console.log('hi')
     var anime1 = anime({
         targets: '.main-section-am-cup-boat',
         translateX: [0, '-50vw'],
@@ -91,7 +88,7 @@ $(function () {
         autoplay:false,
     })
 
-    var mainS = $('.main-section').offset().top
+    var mainS = $('.home .main-section').offset().top
     $(document).on('scroll',function(){
 
         var scrollTop = $(document).scrollTop()

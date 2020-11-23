@@ -127,12 +127,14 @@ header .nav .nav-content ul li a {
 @media (min-width: 75em) {
   header .nav {
     position: fixed;
+    border: 2px solid green;
   }
   header .nav .bars {
     display: none;
   }
   header .nav .nav-content {
     position: relative;
+    width: 100vw;
     height: 6em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -401,12 +403,12 @@ header .nav .nav-content ul li a {
   line-height: 1.25em;
 }
 
-.home-page main .solutions-section, .home-page main .clients-section {
+.home-page main .our-work-section {
   position: relative;
   padding-top: 2em;
 }
 
-.home-page main .solutions-section .solutions-section-bg-img, .home-page main .solutions-section .clients-section-bg-img, .home-page main .clients-section .solutions-section-bg-img, .home-page main .clients-section .clients-section-bg-img {
+.home-page main .our-work-section .our-work-section-bg-img {
   position: fixed;
   z-index: -1;
   top: 0;
@@ -417,19 +419,19 @@ header .nav .nav-content ul li a {
   display: block;
 }
 
-.home-page main .solutions-section .solutions-section-bg-img img, .home-page main .solutions-section .clients-section-bg-img img, .home-page main .clients-section .solutions-section-bg-img img, .home-page main .clients-section .clients-section-bg-img img {
+.home-page main .our-work-section .our-work-section-bg-img img {
   height: 100%;
 }
 
-.home-page main .solutions-section .solutions-section-content, .home-page main .solutions-section .clients-section-content, .home-page main .clients-section .solutions-section-content, .home-page main .clients-section .clients-section-content {
+.home-page main .our-work-section .our-work-section-content {
   width: 100%;
 }
 
-.home-page main .solutions-section .solutions-section-content .solutions-section-content-header, .home-page main .solutions-section .solutions-section-content .clients-section-content-header, .home-page main .solutions-section .clients-section-content .solutions-section-content-header, .home-page main .solutions-section .clients-section-content .clients-section-content-header, .home-page main .clients-section .solutions-section-content .solutions-section-content-header, .home-page main .clients-section .solutions-section-content .clients-section-content-header, .home-page main .clients-section .clients-section-content .solutions-section-content-header, .home-page main .clients-section .clients-section-content .clients-section-content-header {
+.home-page main .our-work-section .our-work-section-content .our-work-section-content-header {
   position: relative;
 }
 
-.home-page main .solutions-section .solutions-section-content .solutions-section-content-header h1, .home-page main .solutions-section .solutions-section-content .clients-section-content-header h1, .home-page main .solutions-section .clients-section-content .solutions-section-content-header h1, .home-page main .solutions-section .clients-section-content .clients-section-content-header h1, .home-page main .clients-section .solutions-section-content .solutions-section-content-header h1, .home-page main .clients-section .solutions-section-content .clients-section-content-header h1, .home-page main .clients-section .clients-section-content .solutions-section-content-header h1, .home-page main .clients-section .clients-section-content .clients-section-content-header h1 {
+.home-page main .our-work-section .our-work-section-content .our-work-section-content-header h1 {
   position: relative;
   font-size: 3em;
   z-index: 5;
@@ -439,7 +441,7 @@ header .nav .nav-content ul li a {
   text-transform: uppercase;
 }
 
-.home-page main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke, .home-page main .solutions-section .solutions-section-content .clients-section-content-header .brush-stroke, .home-page main .solutions-section .clients-section-content .solutions-section-content-header .brush-stroke, .home-page main .solutions-section .clients-section-content .clients-section-content-header .brush-stroke, .home-page main .clients-section .solutions-section-content .solutions-section-content-header .brush-stroke, .home-page main .clients-section .solutions-section-content .clients-section-content-header .brush-stroke, .home-page main .clients-section .clients-section-content .solutions-section-content-header .brush-stroke, .home-page main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+.home-page main .our-work-section .our-work-section-content .our-work-section-content-header .brush-stroke {
   position: absolute;
   z-index: 4;
   bottom: .5em;
@@ -449,7 +451,7 @@ header .nav .nav-content ul li a {
   width: 70vw;
 }
 
-.home-page main .solutions-section .solutions-section-content ul, .home-page main .solutions-section .clients-section-content ul, .home-page main .clients-section .solutions-section-content ul, .home-page main .clients-section .clients-section-content ul {
+.home-page main .our-work-section .our-work-section-content ul {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,18 +464,18 @@ header .nav .nav-content ul li a {
   z-index: 5;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items, .home-page main .solutions-section .clients-section-content ul li .list-items, .home-page main .clients-section .solutions-section-content ul li .list-items, .home-page main .clients-section .clients-section-content ul li .list-items {
+.home-page main .our-work-section .our-work-section-content ul li .list-items {
   position: relative;
   width: 100vw;
   height: 100%;
   padding: 0;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items a, .home-page main .solutions-section .clients-section-content ul li .list-items a, .home-page main .clients-section .solutions-section-content ul li .list-items a, .home-page main .clients-section .clients-section-content ul li .list-items a {
+.home-page main .our-work-section .our-work-section-content ul li .list-items a {
   cursor: pointer;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items a img, .home-page main .solutions-section .clients-section-content ul li .list-items a img, .home-page main .clients-section .solutions-section-content ul li .list-items a img, .home-page main .clients-section .clients-section-content ul li .list-items a img {
+.home-page main .our-work-section .our-work-section-content ul li .list-items a img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -486,7 +488,7 @@ header .nav .nav-content ul li a {
   mix-blend-mode: screen;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments, .home-page main .solutions-section .clients-section-content ul li .list-items .list-comments, .home-page main .clients-section .solutions-section-content ul li .list-items .list-comments, .home-page main .clients-section .clients-section-content ul li .list-items .list-comments {
+.home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments {
   position: absolute;
   top: 0;
   width: 100%;
@@ -503,7 +505,7 @@ header .nav .nav-content ul li a {
           justify-content: center;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments p, .home-page main .solutions-section .clients-section-content ul li .list-items .list-comments p, .home-page main .clients-section .solutions-section-content ul li .list-items .list-comments p, .home-page main .clients-section .clients-section-content ul li .list-items .list-comments p {
+.home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments p {
   color: #fff;
   font-size: 2em;
   text-align: center;
@@ -512,7 +514,7 @@ header .nav .nav-content ul li a {
   text-shadow: -2px 2px 2px rgba(26, 27, 38, 0.5);
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments button, .home-page main .solutions-section .clients-section-content ul li .list-items .list-comments button, .home-page main .clients-section .solutions-section-content ul li .list-items .list-comments button, .home-page main .clients-section .clients-section-content ul li .list-items .list-comments button {
+.home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments button {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -530,16 +532,16 @@ header .nav .nav-content ul li a {
   border: 1px solid #fff;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments button:hover, .home-page main .solutions-section .clients-section-content ul li .list-items .list-comments button:hover, .home-page main .clients-section .solutions-section-content ul li .list-items .list-comments button:hover, .home-page main .clients-section .clients-section-content ul li .list-items .list-comments button:hover {
+.home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments button:hover {
   cursor: pointer;
 }
 
-.home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments button a, .home-page main .solutions-section .clients-section-content ul li .list-items .list-comments button a, .home-page main .clients-section .solutions-section-content ul li .list-items .list-comments button a, .home-page main .clients-section .clients-section-content ul li .list-items .list-comments button a {
+.home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments button a {
   text-decoration: none;
   color: #fff;
 }
 
-.home-page main .solutions-section .solutions-section-content .view-more, .home-page main .solutions-section .clients-section-content .view-more, .home-page main .clients-section .solutions-section-content .view-more, .home-page main .clients-section .clients-section-content .view-more {
+.home-page main .our-work-section .our-work-section-content .view-more {
   position: relative;
   z-index: 5;
   font-size: 1.25em;
@@ -561,11 +563,11 @@ header .nav .nav-content ul li a {
   margin-bottom: 1em;
 }
 
-.home-page main .solutions-section .solutions-section-content .view-more:hover, .home-page main .solutions-section .clients-section-content .view-more:hover, .home-page main .clients-section .solutions-section-content .view-more:hover, .home-page main .clients-section .clients-section-content .view-more:hover {
+.home-page main .our-work-section .our-work-section-content .view-more:hover {
   cursor: pointer;
 }
 
-.home-page main .solutions-section .solutions-section-content .view-more a, .home-page main .solutions-section .clients-section-content .view-more a, .home-page main .clients-section .solutions-section-content .view-more a, .home-page main .clients-section .clients-section-content .view-more a {
+.home-page main .our-work-section .our-work-section-content .view-more a {
   text-decoration: none;
   color: #fff;
 }
@@ -590,13 +592,13 @@ header .nav .nav-content ul li a {
   .home-page main .main-section .main-section-txt h1 {
     font-size: 4vw;
   }
-  .home-page main .solutions-section .solutions-section-content .solutions-section-content-header h1 {
+  .home-page main .our-work-section .our-work-section-content .our-work-section-content-header h1 {
     font-size: 6em;
   }
-  .home-page main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke {
+  .home-page main .our-work-section .our-work-section-content .our-work-section-content-header .brush-stroke {
     width: 70vw;
   }
-  .home-page main .solutions-section .solutions-section-content .view-more {
+  .home-page main .our-work-section .our-work-section-content .view-more {
     width: 20vw;
   }
 }
@@ -654,14 +656,14 @@ header .nav .nav-content ul li a {
   .home-page main .main-section .main-section-txt h1 {
     font-size: 4vw;
   }
-  .home-page main .solutions-section .solutions-section-content .solutions-section-content-header h1 {
+  .home-page main .our-work-section .our-work-section-content .our-work-section-content-header h1 {
     font-size: 6em;
   }
-  .home-page main .solutions-section .solutions-section-content .solutions-section-content-header .brush-stroke {
+  .home-page main .our-work-section .our-work-section-content .our-work-section-content-header .brush-stroke {
     position: absolute;
     width: 30vw;
   }
-  .home-page main .solutions-section .solutions-section-content ul {
+  .home-page main .our-work-section .our-work-section-content ul {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -671,18 +673,18 @@ header .nav .nav-content ul li a {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .home-page main .solutions-section .solutions-section-content ul li {
+  .home-page main .our-work-section .our-work-section-content ul li {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33.3%;
             flex: 0 0 33.3%;
   }
-  .home-page main .solutions-section .solutions-section-content ul li .list-items {
+  .home-page main .our-work-section .our-work-section-content ul li .list-items {
     width: 100%;
   }
-  .home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments {
+  .home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments {
     display: none;
   }
-  .home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments-cricket {
+  .home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments-cricket {
     border: 3px solid red;
     display: block;
     position: absolute;
@@ -693,7 +695,7 @@ header .nav .nav-content ul li a {
     width: 100%;
     height: 100%;
   }
-  .home-page main .solutions-section .solutions-section-content ul li .list-items .list-comments-cricket h2 {
+  .home-page main .our-work-section .our-work-section-content ul li .list-items .list-comments-cricket h2 {
     color: #fff;
     font-size: 3em;
     text-align: center;
@@ -705,14 +707,14 @@ header .nav .nav-content ul li a {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-  .home-page main .solutions-section .solutions-section-content ul li .list-items :hover + .list-comments-sporting {
+  .home-page main .our-work-section .our-work-section-content ul li .list-items :hover + .list-comments-sporting {
     display: block;
     position: relative;
     z-index: 50;
     -webkit-filter: brightness(20%);
             filter: brightness(20%);
   }
-  .home-page main .solutions-section .solutions-section-content .view-more {
+  .home-page main .our-work-section .our-work-section-content .view-more {
     width: 10%;
   }
 }
@@ -761,6 +763,7 @@ header .nav .nav-content ul li a {
 .about-page .about-section .the-header {
   width: 80%;
   margin: 0 auto;
+  text-transform: uppercase;
 }
 
 .about-page .about-section .the-header h1 {
@@ -778,6 +781,40 @@ header .nav .nav-content ul li a {
   color: #1A1B26;
 }
 
+.about-page .about-section .the-paragraph ul {
+  padding: .5em 0;
+}
+
+.about-page .about-section .the-paragraph ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin: .5em 0;
+}
+
+@media (min-width: 55em) {
+  .about-page .about-section .the-header h1 {
+    font-size: 3em;
+  }
+  .about-page .about-section .the-paragraph {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 75em) {
+  .about-page .about-section {
+    margin-top: 60em;
+  }
+  .about-page .about-section .the-header {
+    width: 60vw;
+  }
+  .about-page .about-section .the-header h1 {
+    font-size: 4em;
+  }
+  .about-page .about-section .the-paragraph {
+    width: 60vw;
+  }
+}
+
 .about-page .image-section {
   position: relative;
   z-index: 6;
@@ -788,13 +825,34 @@ header .nav .nav-content ul li a {
   display: block;
 }
 
+.about-page .clients-section {
+  width: 100vw;
+}
+
 .about-page .clients-section .clients-section-content {
   background-color: #fff;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  color: #0A57A4;
+}
+
+.about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+  display: block;
+  width: 70vw;
+  margin: -3vh auto 0 auto;
 }
 
 .about-page .clients-section .clients-section-content .clients {
   width: 80%;
-  margin: 0 auto;
+  margin: 1em auto 1em auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -808,18 +866,111 @@ header .nav .nav-content ul li a {
   height: auto;
   display: block;
   margin: 1em auto;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+@media (min-width: 55em) {
+  .about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+    font-size: 5em;
+  }
+  .about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+    width: 50vw;
+  }
+  .about-page .clients-section .clients-section-content .clients {
+    padding-bottom: 1em;
+  }
+}
+
+@media (min-width: 75em) {
+  .about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+    padding-top: 1em;
+    font-size: 5em;
+  }
+  .about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+    width: 30em;
+    top: -1em;
+  }
+  .about-page .clients-section .clients-section-content .clients {
+    width: 60vw;
+    padding: 2em 0;
+  }
+  .about-page .clients-section .clients-section-content .clients img {
+    width: 10em;
+    padding: 1em 0;
+  }
+  .about-page .clients-section .clients-section-content .clients img:hover {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
 }
 
 .about-page .sustainability-section {
   width: 100vw;
   height: 100%;
-  padding: 1em;
+  padding: 1em 0;
   background-color: #dddcdc;
 }
 
 .about-page .sustainability-section .sustainability-certification {
   width: 80%;
   margin: 0 auto;
+}
+
+.about-page .sustainability-section .sustainability-certification h1 {
+  text-transform: uppercase;
+  color: #1A1B26;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.about-page .sustainability-section .sustainability-certification p {
+  color: #fff;
+  text-align: center;
+}
+
+.about-page .sustainability-section .sustainability-certification-img img {
+  display: block;
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+
+@media (min-width: 55em) {
+  .about-page .sustainability-section {
+    padding: 6em 0;
+  }
+  .about-page .sustainability-section .sustainability-certification h1 {
+    font-size: 4em;
+  }
+  .about-page .sustainability-section .sustainability-certification p {
+    font-size: 2em;
+    margin: 3em 0 0 0;
+  }
+  .about-page .sustainability-section .sustainability-certification-img img {
+    width: 40vw;
+    padding: 3em 0 0 0;
+  }
+}
+
+@media (min-width: 55em) {
+  .about-page .sustainability-section .sustainability-certification h1 {
+    font-size: 6em;
+  }
+  .about-page .sustainability-section .sustainability-certification p {
+    font-size: 3em;
+    margin: 1em 0 0 0;
+  }
+  .about-page .sustainability-section .sustainability-certification-img img {
+    width: 40vw;
+  }
+}
+
+.our-work .taxonomy-section {
+  border: 2px solid red;
+  position: relative;
+  z-index: 150;
+  top: 6em;
 }
 
 footer {
