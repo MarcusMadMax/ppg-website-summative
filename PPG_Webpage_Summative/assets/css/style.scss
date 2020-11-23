@@ -190,7 +190,6 @@ $white-color: #fff;
                             color: $white-color;
                             text-decoration: none;
                             font-size: 3em;
-                            padding-bottom: .5em;
                         }
                     }
                 }
@@ -219,7 +218,6 @@ $white-color: #fff;
             }
         }
 
-
         @include respond-to('bp3'){
             .nav{
                 position: fixed;
@@ -229,14 +227,12 @@ $white-color: #fff;
                 }
         
                 .nav-content{
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100vw;
+                    position: relative;
                     height: 6em;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    padding: 0 5em;
                     opacity: 1 !important;
         
                     .logo{
@@ -245,31 +241,40 @@ $white-color: #fff;
                         height: 6em;
                         display: flex;
                         align-items: center;
-                        margin-top: 0;
-        
-                        img{
-                            text-align: center;
-                            height: 5em;
+                        margin: 0;
+                        padding: 0;
+                        
+                        a{
+
+                            img{
+                                text-align: center;
+                                height: 5em;
+                                width: auto;
+                            }
                         }
                     }
         
                     ul{
                         position: relative;
-                        right: 0;
-                        height: 5em;
+                        width: auto;
+                        height: 6em;
                         display: flex;
                         align-items: center;
         
                         li{
                             position: relative;
+                            width: auto;
                             left: 0;
-                            padding: 0 2em;
-                            opacity: 1;
+                            margin: 2em 0;
         
                             a{
+    
                                 color: $white-color;
                                 text-decoration: none;
                                 font-size: 1.25em;
+                                padding-bottom: .25em;
+                                margin: 0 2em;
+                                border-bottom: 1px solid transparent;
                                 transition: all .5s;
         
                                 &:hover{
@@ -369,7 +374,7 @@ $white-color: #fff;
                 z-index: 5;
                 bottom: 0;
                 bottom: -3vh;
-                right: -60vw;
+                right: -75vw;
                 height: auto;
                 width: 250%;
             }
@@ -392,10 +397,6 @@ $white-color: #fff;
                 }
             }
                         
-            .list-comments-color{
-                opacity: 50%;
-                border: 2px solid red;
-            }
         }
 
         .solutions-section, .clients-section{
@@ -425,6 +426,7 @@ $white-color: #fff;
 
                     h1{
                         position: relative;
+                        font-size: 3em;
                         z-index: 5;
                         text-align: center;
                         color: $ppg-blue;
@@ -438,7 +440,7 @@ $white-color: #fff;
                         bottom: .5em;
                         left: 50%;
                         transform: translateX(-50%);
-                        width: 60vw;
+                        width: 70vw;
                     }
                 }
 
@@ -472,12 +474,39 @@ $white-color: #fff;
                 }
             }
 
+            .main-section{
+                height: 55vh;
+        
+                .main-section-am-cup-boat{
+                    bottom: 0;
+                    right: -55vw;
+                    width: 150vw;
+                }
+        
+                .main-section-txt{
+                    width: 60vw;
+                    padding: 0 1em 15em 2em;
+                    margin-top: 3em;
+                    
+                    h1{
+                        font-size: 4vw;
+                    }
+                }
+
             .solutions-section{
 
-                .solutions-section-content-header{
+                .solutions-section-content{
 
-                    h1{
-                        font-size: 4em;
+                    .solutions-section-content-header{
+
+                        h1{
+                            font-size: 4em;
+                        }
+
+                        .brush-stroke{
+                            border: 2px solid green;
+                            width: 90vw;
+                        }
                     }
                 }
             }
@@ -524,24 +553,25 @@ $white-color: #fff;
                 height: 100vh;
         
         
-                .main-section-am-cup-bkg{
-                    bottom: -5vh;
-                    right: -70vw;
-                    width: 170vw;
-                }
-        
-                .main-section-am-cup-boat{
-                    bottom: -5vh;
-                    right: -65vw;
-                    width: 150vw;
-                }
-        
-                .main-section-txt{
-                    width: 60vw;
-                    padding: 0 1em 15em 2em;
-                    
-                    h1{
-                        font-size: 4vw;
+                    .main-section-am-cup-bkg{
+                        bottom: -5vh;
+                        right: -70vw;
+                        width: 170vw;
+                    }
+            
+                    .main-section-am-cup-boat{
+                        bottom: -5vh;
+                        right: -65vw;
+                        width: 200vw;
+                    }
+            
+                    .main-section-txt{
+                        width: 60vw;
+                        padding: 0 1em 15em 2em;
+                        
+                        h1{
+                            font-size: 4vw;
+                        }
                     }
                 }
             }
@@ -726,10 +756,6 @@ $white-color: #fff;
 
 
         //Solutions
-
-
-
-        // @import 'home-desktop-main';
         @import 'about-desktop-main';
     }
 
@@ -740,15 +766,16 @@ $white-color: #fff;
         background-size: cover;
         background-repeat: no-repeat;
         background-color: $highlight-color;
+        padding-top: 2em;
 
-        h3{
-            color: $highkight-color;
-            width: 90%;
-            font-size: 1.5em;
-            padding-top: 3em;
-            margin: 0 auto;
-            text-align: center;
-        }
+        // h3{
+        //     color: $highkight-color;
+        //     width: 90%;
+        //     font-size: 1.5em;
+        //     padding-top: 3em;
+        //     margin: 0 auto;
+        //     text-align: center;
+        // }
 
         .footer-content{
             position: relative;
@@ -825,11 +852,11 @@ $white-color: #fff;
         }
 
         @include respond-to('bp2'){
-
-            h3{
-                font-size: 3em;
-                padding-top: 1em;
-            }
+            border: 2px solid green;
+            // h3{
+            //     font-size: 3em;
+            //     padding-top: 1em;
+            // }
 
             .footer-content{
                 display: flex;
@@ -866,30 +893,27 @@ $white-color: #fff;
         }
 
         @include respond-to('bp3'){
-            height: 20em;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2em;
-            box-sizing: border-box;
+            padding: 3em 0 2em 0;
+
+            // h3{
+            //     font-size: 2em;
+            //     letter-spacing: .25em;
+            //     text-transform: uppercase;
+            //     text-align: left;
+            //     border: 1px solid red;
+            //     display: block;
+            //     width: fit-content;
+            // }
+
             .footer-content{
 
-        
-                h3{
-                    font-size: 2em;
-                    letter-spacing: .25em;
-                    text-transform: uppercase;
-                }
-                
                 .footer-address{
-                    text-align: left;
         
                     .footer-contact{
                         justify-content: left;
         
                         a{
-                            font-size: 1.5em;
+                            font-size: 1.25em;
                             letter-spacing: .25em;
                             vertical-align: middle;
                             transition: all 1s;
@@ -930,22 +954,22 @@ $white-color: #fff;
                 }
         
                 .footer-links{
-                    padding: 2em 0;
-                    margin-top: 0;
-                    box-sizing: border-box;
+                    position: relative;
+                    padding: 0;
                     background-color: transparent;
         
                     ul{
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-around;
         
                         li{
-        
+                            margin: .5em;
+
                             a{
                                 font-size: 1.5em;
                                 display: block;
-                                margin: .25em 0;
+                                margin: 0;
+                                padding: 0;
                                 font-weight: 300;
                                 letter-spacing: .25em;
                                 text-align: right;

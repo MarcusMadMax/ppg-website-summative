@@ -95,7 +95,7 @@ $(function () {
     $(document).on('scroll',function(){
 
         var scrollTop = $(document).scrollTop()
-        var progress = (scrollTop - (mainS-600))/900
+        var progress = (scrollTop - (mainS-500))/900
         anime1.seek(anime1.duration * progress)
     })
 })
