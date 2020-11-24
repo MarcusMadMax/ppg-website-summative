@@ -8,7 +8,10 @@ var moveIn = anime.timeline({
 moveIn
     .add({
         targets: '.nav-content',
-        opacity: 1,
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content').style.display = 'block';
+        },
         easing: 'linear'
     }, 400)
 
@@ -16,12 +19,18 @@ moveIn
         targets: '.nav-content li',
         translateX: ('100%'),
         delay: anime.stagger(500),
-        opacity: 1,
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content li').style.display = 'block';
+        },
     }, 800)
 
     .add({
         targets: '.nav-content .logo',
-        opacity: 1,
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content .logo').style.display = 'block';
+        },
         duration: 10,
         autoplay: false,
     }, 900)
@@ -31,14 +40,39 @@ moveIn
 var moveOut = anime.timeline({
     easing: 'easeOutExpo',
     duration: .1,
+    autoplay: false,
 })
 
 //Timelie Move Out
 moveOut
     .add({
         targets: '.nav .nav-content',
-        opacity: 0,
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content').style.display = 'none';
+        },
     })
+
+    .add({
+        targets: '.nav-content li',
+        translateX: ('100%'),
+        delay: anime.stagger(500),
+        direction: 'reverse',
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content li').style.display = 'none';
+        },
+    }, 800)
+
+    .add({
+        targets: '.nav-content .logo',
+        duration: 10,
+        direction: 'reverse',
+        autoplay: false,
+        begin: function () {
+            document.querySelector('.nav-content .logo').style.display = 'none';
+        },
+    }, 900)
 
 //Changing hamburger / bars Move In / Move Out Execution
 const barsBtn = document.querySelector('.bars')
@@ -85,15 +119,18 @@ $(function () {
         translateX: [0, '-50vw'],
         easing: 'linear',
         duration: 1000,
-        autoplay:false,
+        autoplay: false,
     })
 
     var mainS = $('.home .main-section').offset().top
-    $(document).on('scroll',function(){
+    $(document).on('scroll', function () {
 
         var scrollTop = $(document).scrollTop()
-        var progress = (scrollTop - (mainS-500))/900
+        var progress = (scrollTop - (mainS - 500)) / 900
         anime1.seek(anime1.duration * progress)
     })
 })
+
+
+var mixer = mixitup('.container');
 
