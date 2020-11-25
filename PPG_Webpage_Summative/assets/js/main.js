@@ -122,7 +122,7 @@ $(function () {
         autoplay: false,
     })
 
-    var mainS = $('.home .main-section').offset().top
+    var mainS = $('.home-page .main-section').offset().top
     $(document).on('scroll', function () {
 
         var scrollTop = $(document).scrollTop()
@@ -132,4 +132,4 @@ $(function () {
 })
 
 //Taxonomy
-var mixer = mixitup('.container');
+var mixer = mixitup('.what-we-do-page .taxonomy-control-container .container');

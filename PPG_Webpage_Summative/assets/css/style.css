@@ -11,9 +11,7 @@ body {
 }
 
 header nav {
-  position: relative;
-  width: 100vw;
-  background-color: #FA0029;
+  position: absolute;
 }
 
 header nav .bars {
@@ -75,34 +73,29 @@ header nav .nav-content {
   z-index: 99;
   top: 0;
   left: -100%;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: #1A1B26;
   display: none;
-  padding-top: 7em;
 }
 
 header nav .nav-content #logo img {
-  display: block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 80%;
-  margin: 0 auto;
-}
-
-header nav .nav-content #logo:hover {
-  -webkit-filter: grayscale(50%);
-          filter: grayscale(50%);
+  margin-top: 7em;
 }
 
 header nav .nav-content ul {
   text-align: center;
-  margin-bottom: 5em;
 }
 
 header nav .nav-content ul li {
   position: relative;
   width: 100vw;
   left: -100vw;
-  margin: 2em 0;
 }
 
 header nav .nav-content ul li a {
@@ -110,15 +103,18 @@ header nav .nav-content ul li a {
   font-weight: 300;
   color: #fff;
   text-decoration: none;
-  font-size: 3em;
+  font-size: 2em;
 }
 
-@media (min-width: 55em) {
-  header nav .nav-content .logo a img {
-    width: 10vw;
+@media (min-width: 45em) {
+  header nav .nav-content #logo img {
+    width: 50%;
   }
   header nav .nav-content ul {
-    position: relative;
+    margin-top: 7em;
+  }
+  header nav .nav-content ul li a {
+    font-size: 4em;
   }
 }
 
@@ -153,6 +149,11 @@ header nav .nav-content ul li a {
     position: relative;
     z-index: 110;
     height: 5em;
+    margin-top: 0;
+  }
+  header nav .nav-content #logo:hover {
+    -webkit-filter: grayscale(50%);
+            filter: grayscale(50%);
   }
   header nav .nav-content ul {
     display: -webkit-box;
@@ -165,7 +166,7 @@ header nav .nav-content ul li a {
         -ms-flex-pack: end;
             justify-content: flex-end;
     text-align: left;
-    margin-bottom: 0;
+    margin-top: 0;
   }
   header nav .nav-content ul li {
     position: relative;
@@ -184,11 +185,6 @@ header nav .nav-content ul li a {
     border-bottom: 1px solid #FA0029;
     text-shadow: 2px 2px #FA0029;
   }
-}
-
-.home-page {
-  width: 100vw;
-  height: 100vh;
 }
 
 .home-page main {
@@ -224,6 +220,7 @@ header nav .nav-content ul li a {
   line-height: 1.5em;
   color: #fff;
   text-transform: uppercase;
+  text-shadow: 0px 0px 25px #0A57A4;
 }
 
 .home-page main .quote-section h1 span {
@@ -362,6 +359,40 @@ header nav .nav-content ul li a {
   color: #fff;
 }
 
+@media (min-width: 75em) {
+  .home-page main .link-section ul li .list-items .list-comments {
+    background-color: rgba(26, 27, 38, 0.7);
+    display: none;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .home-page main .link-section ul li .list-items .list-comments a {
+    height: 100%;
+    width: 80%;
+    font-size: 3em;
+    display: block;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-shadow: 8px 8px black;
+  }
+  .home-page main .link-section ul li .list-items .list-comments button {
+    display: none;
+  }
+  .home-page main .link-section ul li .list-items:hover .list-comments {
+    display: block;
+    width: 100%;
+  }
+}
+
 @media (min-width: 45em) {
   .home-page main .link-section ul {
     display: -webkit-box;
@@ -386,32 +417,6 @@ header nav .nav-content ul li a {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 25%;
             flex: 1 0 25%;
-  }
-  .home-page main .link-section ul li .list-items .list-comments {
-    background-color: rgba(26, 27, 38, 0.7);
-    display: none;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-  }
-  .home-page main .link-section ul li .list-items .list-comments a {
-    height: 100%;
-    font-size: 3em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .home-page main .link-section ul li .list-items .list-comments button {
-    display: none;
-  }
-  .home-page main .link-section ul li .list-items :hover + .list-comments {
-    display: block;
   }
 }
 
@@ -673,6 +678,40 @@ header nav .nav-content ul li a {
   color: #fff;
 }
 
+@media (min-width: 75em) {
+  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments {
+    background-color: rgba(26, 27, 38, 0.7);
+    display: none;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments a {
+    height: 100%;
+    width: 80%;
+    font-size: 3em;
+    display: block;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-shadow: 8px 8px black;
+  }
+  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments button {
+    display: none;
+  }
+  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items:hover .list-comments {
+    display: block;
+    width: 100%;
+  }
+}
+
 .home-page main .what-we-do-section .what-we-do-section-content .view-more {
   position: relative;
   z-index: 5;
@@ -760,67 +799,32 @@ header nav .nav-content ul li a {
         -ms-flex: 1 0 25%;
             flex: 1 0 25%;
   }
-  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments {
-    background-color: rgba(26, 27, 38, 0.7);
-    display: none;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-  }
   .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments a {
-    height: 100%;
-    font-size: 3em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments button {
-    display: none;
-  }
-  .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items :hover + .list-comments {
-    display: block;
-    width: 100%;
+    font-size: 5em;
   }
 }
 
-.about-page {
-  width: 100vw;
-  height: 100vh;
-}
-
-.about-page .top-section {
+.about-page main .top-section {
   position: fixed;
-  z-index: -10;
+  z-index: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
 }
 
-.about-page .top-section img {
+.about-page main .top-section img {
   display: block;
-  height: 100%;
-  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 45em) {
-  .about-page .top-section img {
+  .about-page main .top-section img {
     width: 100%;
   }
 }
 
-@media (min-width: 55em) {
-  .about-page .top-section img {
-    width: 100%;
-  }
-}
-
-.about-page .about-section {
+.about-page main .about-section {
   position: relative;
   width: 100vw;
   height: 100%;
@@ -828,90 +832,90 @@ header nav .nav-content ul li a {
   padding: 2em 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
-  background-blend-mode: screen;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: #dddcdc;
 }
 
-.about-page .about-section .the-header {
+.about-page main .about-section .the-header {
   width: 80%;
   margin: 0 auto;
   text-transform: uppercase;
 }
 
-.about-page .about-section .the-header h1 {
+.about-page main .about-section .the-header h1 {
   text-align: left;
   color: #0A57A4;
 }
 
-.about-page .about-section .the-paragraph {
+.about-page main .about-section .the-paragraph {
   width: 80%;
   margin: 0 auto;
   padding: 1em 0;
 }
 
-.about-page .about-section .the-paragraph p {
+.about-page main .about-section .the-paragraph p {
   color: #1A1B26;
 }
 
-.about-page .about-section .the-paragraph ul {
+.about-page main .about-section .the-paragraph ul {
   padding: .5em 0;
 }
 
-.about-page .about-section .the-paragraph ul li {
+.about-page main .about-section .the-paragraph ul li {
   list-style-type: disc;
   list-style-position: inside;
   margin: .5em 0;
 }
 
 @media (min-width: 55em) {
-  .about-page .about-section .the-header h1 {
+  .about-page main .about-section .the-header h1 {
     font-size: 3em;
   }
-  .about-page .about-section .the-paragraph {
+  .about-page main .about-section .the-paragraph {
     font-size: 1.5em;
   }
 }
 
 @media (min-width: 75em) {
-  .about-page .about-section {
+  .about-page main .about-section {
     margin-top: 60em;
   }
-  .about-page .about-section .the-header {
+  .about-page main .about-section .the-header {
     width: 60vw;
   }
-  .about-page .about-section .the-header h1 {
+  .about-page main .about-section .the-header h1 {
     font-size: 4em;
   }
-  .about-page .about-section .the-paragraph {
+  .about-page main .about-section .the-paragraph {
     width: 60vw;
   }
 }
 
-.about-page .image-section {
+.about-page main .image-section {
+  width: 100vw;
   position: relative;
   z-index: 6;
 }
 
-.about-page .image-section img {
-  width: 100%;
+.about-page main .image-section img {
   display: block;
+  width: 100%;
+  height: auto;
+  -o-object-position: center;
+     object-position: center;
 }
 
-.about-page .clients-section {
+.about-page main .clients-section {
   width: 100vw;
 }
 
-.about-page .clients-section .clients-section-content {
+.about-page main .clients-section .clients-section-content {
   position: relative;
   background-color: #fff;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
-.about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+.about-page main .clients-section .clients-section-content .clients-section-content-header h1 {
   position: relative;
   z-index: 5;
   width: 100%;
@@ -920,13 +924,13 @@ header nav .nav-content ul li a {
   color: #0A57A4;
 }
 
-.about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+.about-page main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
   display: block;
   width: 70vw;
   margin: -3vh auto 0 auto;
 }
 
-.about-page .clients-section .clients-section-content .clients {
+.about-page main .clients-section .clients-section-content .clients {
   width: 80%;
   margin: 1em auto 1em auto;
   display: -webkit-box;
@@ -936,7 +940,7 @@ header nav .nav-content ul li a {
       flex-wrap: wrap;
 }
 
-.about-page .clients-section .clients-section-content .clients img {
+.about-page main .clients-section .clients-section-content .clients img {
   border: 1px solid transparent;
   width: 20vw;
   height: auto;
@@ -947,41 +951,41 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 55em) {
-  .about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+  .about-page main .clients-section .clients-section-content .clients-section-content-header h1 {
     font-size: 5em;
   }
-  .about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+  .about-page main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
     width: 50vw;
   }
-  .about-page .clients-section .clients-section-content .clients {
+  .about-page main .clients-section .clients-section-content .clients {
     padding-bottom: 1em;
   }
 }
 
 @media (min-width: 75em) {
-  .about-page .clients-section .clients-section-content .clients-section-content-header h1 {
+  .about-page main .clients-section .clients-section-content .clients-section-content-header h1 {
     padding-top: 1em;
-    font-size: 5em;
+    font-size: 8em;
   }
-  .about-page .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
-    width: 30em;
-    top: -1em;
+  .about-page main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
+    width: 40em;
+    margin-top: -4em;
   }
-  .about-page .clients-section .clients-section-content .clients {
+  .about-page main .clients-section .clients-section-content .clients {
     width: 60vw;
     padding: 2em 0;
   }
-  .about-page .clients-section .clients-section-content .clients img {
+  .about-page main .clients-section .clients-section-content .clients img {
     width: 10em;
     padding: 1em 0;
   }
-  .about-page .clients-section .clients-section-content .clients img:hover {
+  .about-page main .clients-section .clients-section-content .clients img:hover {
     -webkit-filter: grayscale(0%);
             filter: grayscale(0%);
   }
 }
 
-.about-page .sustainability-section {
+.about-page main .sustainability-section {
   position: relative;
   width: 100vw;
   height: 100%;
@@ -989,31 +993,31 @@ header nav .nav-content ul li a {
   background-color: #dddcdc;
 }
 
-.about-page .sustainability-section .sustainability-certification {
+.about-page main .sustainability-section .sustainability-certification {
   width: 80%;
   margin: 0 auto;
 }
 
-.about-page .sustainability-section .sustainability-certification h1 {
+.about-page main .sustainability-section .sustainability-certification h1 {
   text-transform: uppercase;
   color: #1A1B26;
   font-size: 1.25em;
   text-align: center;
 }
 
-.about-page .sustainability-section .sustainability-certification p {
+.about-page main .sustainability-section .sustainability-certification p {
   color: #fff;
   text-align: center;
 }
 
-.about-page .sustainability-section .sustainability-certification-img img {
+.about-page main .sustainability-section .sustainability-certification-img img {
   display: block;
   width: 50vw;
   margin: 0 auto;
   padding-top: 1em;
 }
 
-.about-page .sustainability-section::after {
+.about-page main .sustainability-section::after {
   content: '';
   position: absolute;
   top: 22vh;
@@ -1024,39 +1028,40 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 55em) {
-  .about-page .sustainability-section {
+  .about-page main .sustainability-section {
     padding: 6em 0;
   }
-  .about-page .sustainability-section .sustainability-certification h1 {
+  .about-page main .sustainability-section .sustainability-certification h1 {
     font-size: 4em;
   }
-  .about-page .sustainability-section .sustainability-certification p {
+  .about-page main .sustainability-section .sustainability-certification p {
     font-size: 2em;
     margin: 3em 0 0 0;
   }
-  .about-page .sustainability-section .sustainability-certification-img img {
+  .about-page main .sustainability-section .sustainability-certification-img img {
     width: 40vw;
     padding: 3em 0 0 0;
   }
 }
 
 @media (min-width: 55em) {
-  .about-page .sustainability-section .sustainability-certification h1 {
+  .about-page main .sustainability-section .sustainability-certification h1 {
     font-size: 6em;
+    color: #0A57A4;
   }
-  .about-page .sustainability-section .sustainability-certification p {
+  .about-page main .sustainability-section .sustainability-certification p {
     font-size: 3em;
     margin: 1em 0 0 0;
   }
-  .about-page .sustainability-section .sustainability-certification-img img {
+  .about-page main .sustainability-section .sustainability-certification-img img {
     width: 40vw;
   }
-  .about-page .sustainability-section::after {
+  .about-page main .sustainability-section::after {
     top: 60vh;
   }
 }
 
-.what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
+.what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
   position: relative;
   top: 0;
   left: 0;
@@ -1068,7 +1073,7 @@ header nav .nav-content ul li a {
   background-size: cover;
 }
 
-.what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg .color {
+.what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg .color {
   display: block;
   position: absolute;
   top: 0;
@@ -1079,7 +1084,7 @@ header nav .nav-content ul li a {
   background-color: #1A1B26;
 }
 
-.what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
+.what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
   position: relative;
   top: 1em;
   left: 1em;
@@ -1096,7 +1101,7 @@ header nav .nav-content ul li a {
   height: auto;
 }
 
-.what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
+.what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
   width: 8em;
   height: 3em;
   font-size: .5em;
@@ -1106,11 +1111,11 @@ header nav .nav-content ul li a {
   color: #1A1B26;
 }
 
-.what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons :nth-child(1) {
+.what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons :nth-child(1) {
   width: 100%;
 }
 
-.what-we-do-page .taxonomy .container {
+.what-we-do-page main .taxonomy .container {
   z-index: 15;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1124,7 +1129,7 @@ header nav .nav-content ul li a {
   margin: 3em 0;
 }
 
-.what-we-do-page .taxonomy .container .mix {
+.what-we-do-page main .taxonomy .container .mix {
   width: 8em;
   height: auto;
   -webkit-box-flex: 1;
@@ -1132,7 +1137,7 @@ header nav .nav-content ul li a {
           flex: 1 0 33.3%;
 }
 
-.what-we-do-page .taxonomy .container .mix img {
+.what-we-do-page main .taxonomy .container .mix img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1142,32 +1147,32 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 45em) {
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
     height: 18em;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
     width: 70%;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
     font-size: 1em;
     height: auto;
   }
 }
 
 @media (min-width: 55em) {
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
     width: 70%;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .container {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .container {
     margin-top: 6em;
   }
 }
 
 @media (min-width: 75em) {
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-bkg {
     height: 23em;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons {
     width: 50%;
     top: 10em;
     margin: 0 auto;
@@ -1175,20 +1180,20 @@ header nav .nav-content ul li a {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
     cursor: pointer;
   }
-  .what-we-do-page .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button:hover {
+  .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button:hover {
     color: #FA0029;
     background: #0A57A4;
   }
-  .what-we-do-page .taxonomy .container {
+  .what-we-do-page main .taxonomy .container {
     width: 50vw;
     margin: 0 auto;
   }
 }
 
-.what-we-do-page .quote-section {
+.what-we-do-page main .quote-section {
   position: relative;
   width: 75vw;
   margin: 1em auto;
@@ -1196,7 +1201,7 @@ header nav .nav-content ul li a {
   background-color: #1a1b26;
 }
 
-.what-we-do-page .quote-section h3 {
+.what-we-do-page main .quote-section h3 {
   position: relative;
   z-index: 2;
   color: #fff;
@@ -1205,7 +1210,7 @@ header nav .nav-content ul li a {
   text-align: center;
 }
 
-.what-we-do-page .quote-section .brush-stroke {
+.what-we-do-page main .quote-section .brush-stroke {
   position: relative;
   top: -1em;
   left: 50%;
@@ -1215,7 +1220,7 @@ header nav .nav-content ul li a {
   width: 70vw;
 }
 
-.what-we-do-page .quote-section::before {
+.what-we-do-page main .quote-section::before {
   content: '';
   position: absolute;
   top: -1.5em;
@@ -1228,54 +1233,58 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 45em) {
-  .what-we-do-page .quote-section h3 {
+  .what-we-do-page main .quote-section h3 {
     font-size: 2em;
     padding: 0 .5em 0 .5em;
   }
-  .what-we-do-page .quote-section .brush-stroke {
+  .what-we-do-page main .quote-section .brush-stroke {
     width: 50vw;
   }
-  .what-we-do-page .quote-section::before {
+  .what-we-do-page main .quote-section::before {
     top: 21.5em;
   }
 }
 
 @media (min-width: 55em) {
-  .what-we-do-page .quote-section {
+  .what-we-do-page main .quote-section {
     margin-top: 7em;
   }
-  .what-we-do-page .quote-section h3 {
+  .what-we-do-page main .quote-section h3 {
     font-size: 2em;
     padding-top: 1em;
   }
-  .what-we-do-page .quote-section .brush-stroke {
+  .what-we-do-page main .quote-section .brush-stroke {
     width: 60vw;
     bottom: 2em;
   }
-  .what-we-do-page .quote-section::before {
+  .what-we-do-page main .quote-section::before {
     margin-top: -25em;
   }
 }
 
 @media (min-width: 75em) {
-  .what-we-do-page .quote-section h3 {
+  .what-we-do-page main .quote-section h3 {
     font-size: 4em;
   }
 }
 
 .contact-page main .contact-top-image {
   position: relative;
+  width: 100vw;
 }
 
 .contact-page main .contact-top-image img {
+  width: 100%;
+  height: auto;
   display: block;
-  width: 100vw;
   -webkit-filter: brightness(0.5);
           filter: brightness(0.5);
 }
 
 .contact-page main .contact-top-image h1 {
   position: absolute;
+  width: 50vw;
+  text-align: right;
   top: 50%;
   left: 10%;
   -webkit-transform: translateY(-50%);
@@ -1287,13 +1296,31 @@ header nav .nav-content ul li a {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: 700;
   text-transform: uppercase;
 }
 
+@media (min-width: 45em) {
+  .contact-page main .contact-top-image h1 {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 75em) {
+  .contact-page main .contact-top-image {
+    height: 50vh;
+  }
+  .contact-page main .contact-top-image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
 .contact-page main .contact-form-container {
   background-color: #1A1B26;
+  width: 100vw;
 }
 
 .contact-page main .contact-form-container .form {
@@ -1312,8 +1339,8 @@ header nav .nav-content ul li a {
 
 .contact-page main .contact-form-container .form .group {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 80%;
-          flex: 0 0 80%;
+      -ms-flex: 0 0 90%;
+          flex: 0 0 90%;
   margin: .5em 0;
 }
 
@@ -1323,39 +1350,11 @@ header nav .nav-content ul li a {
   font-weight: 300;
 }
 
-.contact-page main .contact-form-container .form .submit {
-  margin: 1em auto;
+.contact-page main .contact-form-container .form .group .formGroup :focus {
+  color: #0A57A4;
 }
 
-.contact-page main .contact-form-container .form .submit input {
-  color: #00C3FF;
-  font-size: 2em;
-  padding: .25em;
-  cursor: pointer;
-  border-radius: .25em;
-  background-color: gray;
-}
-
-.contact-page main .contact-form-container .form .formGroup :focus {
-  color: white;
-}
-
-.contact-page main .contact-form-container .form .formGroup p {
-  font-size: 1em;
-  letter-spacing: .5em;
-}
-
-.contact-page main .contact-form-container .form .formGroup span {
-  color: #00c3ff;
-}
-
-.contact-page main .contact-form-container .form .formGroup label {
-  color: #4e4d59;
-  display: block;
-  font-size: 1.5em;
-}
-
-.contact-page main .contact-form-container .form .formGroup input {
+.contact-page main .contact-form-container .form .group .formGroup input {
   font-size: 2em;
   padding: .25em;
   -webkit-box-sizing: border-box;
@@ -1363,14 +1362,35 @@ header nav .nav-content ul li a {
   width: 100%;
   outline: none;
   border-radius: .25em;
-  background-color: #00c3ff;
+  background-color: #dddcdc;
 }
 
-.contact-page main .contact-form-container .form .formGroup textarea {
+.contact-page main .contact-form-container .form .group .formGroup textarea {
+  width: 100%;
+  margin: 0 auto;
   outline: none;
+  border-radius: 1.2em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: #1A1B26;
   background-color: #dddcdc;
   font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-page main .contact-form-container .form .submit {
+  margin: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-page main .contact-form-container .form .submit input {
+  color: #dddcdc;
+  font-size: 1.5em;
+  padding: .25em .55em;
+  cursor: pointer;
+  border-radius: .25em;
+  background-color: #0a57a4;
 }
 
 footer {
@@ -1565,13 +1585,5 @@ footer .color {
     height: 6em;
     background-color: #1A1B26;
   }
-}
-
-.message-error {
-  background-color: blue;
-}
-
-.message-success {
-  background-color: orange;
 }
 /*# sourceMappingURL=style.css.map */
