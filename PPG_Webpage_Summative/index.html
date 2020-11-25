@@ -8,29 +8,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>PPG Home</title>
 </head>
 
 <body>
-  <div class='wrapper home-page'>
+
+  <div data-index="0" class='wrapper home-page'>
 
     <header>
-      <nav class="nav">
+      <nav>
         <div class="bars">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
         <div class="nav-content">
-          <div class="logo">
-            <a href="index.html"><img src="assets/img/logo/PPG_Logo_NEW.svg" alt=""></a>
-          </div>
+          <a id="logo" id="logo" href="index.html"><img src="assets/img/logo/PPG_Logo_NEW.svg" alt=""></a>
           <ul>
-            <li class="nav-link"><a class="work" href="index.html">Home</a></li>
-            <li class="nav-link"><a class="about" href="about.html">About</a></li>
-            <li class="nav-link"><a class="our-work" href="our-work.html">Our Work</a></li>
-            <li class="nav-link"><a class="contact" href="contact.html">contact</a></li>
+            <li class="nav-link"><a data-page='home' class="home" href="index.html">Home</a></li>
+            <li class="nav-link"><a data-page='about' class="about" href="about.html">About</a></li>
+            <li class="nav-link"><a data-page='what-we-do' class="what-we-do" href="what-we-do.html">What We Do</a></li>
+            <li class="nav-link"><a data-page='contact' class="contact" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -45,7 +44,6 @@
       <div class="video-section">
         <video class="ppg-video" preload="auto" loop>
           <source src="assets/video/ppg_djeD70v0.mp4" type="video/mp4">
-          <!-- <source src="movie.ogg" type="video/ogg"> -->
           Your browser does not support the video tag.
         </video>
       </div>
@@ -55,7 +53,7 @@
       <!-------------------------------------------------->
 
       <div class="quote-section">
-        <h1><span>Parnell Partners Group</span> <br>are<br>Global Experience<br>Specialists</h1>
+        <h1><span>PPG Events</span> <br>are<br>Local Spacialist<br>With Global Experience</h1>
         <div class="box"></div>
         <img src="assets/img/backgrounds/deep-blue-texture-background.webp" alt="">
       </div>
@@ -69,40 +67,40 @@
 
           <li>
             <div class="list-items">
-              <a href="our-work.html"><img src="assets/img/portfolio/olympic-games.jpg" alt=""></a>
+              <a href="what-we-do.html"><img src="assets/img/queens-warft/2011-queens-wharf-block-party.jpg" alt=""></a>
               <div class="list-comments">
-                <p>Global<br>Sporting<br>Events</p>
-                <button><a href="our-work.html">Do it</a></button>
+                <a href="what-we-do.html">Client Events</a><!--- Photo from Toyota--->
+                <button><a href="what-we-do.html">Do it</a></button>
               </div>
             </div>
           </li>
 
           <li>
             <div class="list-items">
-              <a href="our-work.html"><img src="assets/img/shed-10/the-shed-auckland-live-3 (1).jpg" alt=""></a>
+              <a href="what-we-do.html"><img src="assets/img/shed-10/the-shed-auckland-live-3 (1).jpg" alt=""></a>
               <div class="list-comments">
-                <p>Global<br>Sporting<br>Events</p>
-                <button><a href="our-work.html">Feel it</a></button>
+                <a href="what-we-do.html">Inscentive Experience<br>NZ & International</a><!--- Photo from NZ--->
+                <button><a href="what-we-do.html">Feel it</a></button>
               </div>
             </div>
           </li>
 
           <li>
             <div class="list-items">
-              <a href="our-work.html"><img src="assets/img/general/zebra.jpg" alt=""></a>
+              <a href="what-we-do.html"><img src="assets/img/general/san-francisco.jpg" alt=""></a>
               <div class="list-comments">
-                <p>Global<br>Sporting<br>Events</p>
-                <button><a href="our-work.html">See it</a></button>
+                <a href="what-we-do.html">Destination<br>Management<br>Service</a><!--- Photo from NZ--->
+                <button><a href="what-we-do.html">See it</a></button>
               </div>
             </div>
           </li>
 
           <li>
             <div class="list-items">
-              <a href="our-work.html"><img src="assets/img/general/bach.jpg" alt=""></a>
+              <a href="what-we-do.html"><img src="assets/img/our-work/rugby/all-blacks-haka.webp" alt=""></a>
               <div class="list-comments">
-                <p>Global<br>Sporting<br>Events</p>
-                <button><a href="our-work.html">Adore it</a></button>
+                <a href="what-we-do.html">Sporting<br>Events</a><!--- Photo from Rugby--->
+                <button><a href="what-we-do.html">Adore it</a></button>
               </div>
             </div>
           </li>
@@ -127,55 +125,52 @@
       </div>
 
       <!------------------------------------------------------->
-      <!----------------- our-work Section ------------------->
+      <!----------------- what-we-do Section ------------------->
       <!------------------------------------------------------->
 
-      <div class="our-work-section">
-        <div class="our-work-section-bg-img">
+      <div class="what-we-do-section">
+        <div class="what-we-do-section-bg-img">
           <img src="assets/img/queens-warft/1904-queens-wharf-queens-street.jpg" alt="Queens warft at 1904">
         </div>
-        <div class="our-work-section-content">
-          <div class="our-work-section-content-header">
-            <h1>our-work</h1>
+        <div class="what-we-do-section-content">
+          <div class="what-we-do-section-content-header">
+            <h1>What We Do</h1>
             <img class="brush-stroke" src="assets/img/black-brush-strokes-design/brush-strokes.svg" alt="">
           </div>
-          <ul class="our-work-backgrounds">
+          <ul class="what-we-do-backgrounds">
 
             <li>
               <div class="list-items">
-                <a href="#"><img src="assets/img/portfolio/cricket.webp" alt=""></a>
+                <a href="#"><img src="assets/img/portfolio/olympic-games.jpg" alt=""></a>
                 <div class="list-comments">
-                  <p>International<br>Cricket</p>
-                  <button><a href="our-work.html">Out it</a></button>
-                </div>
-                <div class="list-comments-cricket" style="display: none;">
-                  <h2>International<br>Cricket</h2>
+                  <a href="what-we-do.html">Olympics</a>
+                  <button><a href="what-we-do.html">Go for it</a></button>
                 </div>
               </div>
             </li>
 
             <li>
               <div class="list-items">
-                <a href="our-work.html"><img src="assets/img/our-work/rugby/rugby.jpg" alt=""></a>
+                <a href="what-we-do.html"><img src="assets/img/our-work/rugby/rugby.jpg" alt=""></a>
                 <div class="list-comments">
-                  <p>Global<br>Sporting<br>Events</p>
-                  <button><a href="our-work.html">Try it</a></button>
+                  <a href="what-we-do.html">Rugby</a>
+                  <button><a href="what-we-do.html">Try it</a></button>
                 </div>
               </div>
             </li>
 
             <li>
               <div class="list-items">
-                <a href="our-work.html"><img src="assets/img/amaricas-cup/team-nz2.jpg" alt=""></a>
+                <a href="what-we-do.html"><img src="assets/img/amaricas-cup/team-nz2.jpg" alt=""></a>
                 <div class="list-comments">
-                  <p>Global<br>Sporting<br>Events</p>
-                  <button><a href="our-work.html">Sail it</a></button>
+                  <a href="what-we-do.html">Sailing</a>
+                  <button><a href="what-we-do.html">Sail it</a></button>
                 </div>
               </div>
             </li>
 
           </ul>
-          <button class="view-more"><a href="our-work.html">View more</a></button>
+          <button class="view-more"><a href="what-we-do.html">View more</a></button>
         </div>
       </div>
     </main>
@@ -204,7 +199,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="our-work.html">Our Work</a></li>
+            <li><a href="what-we-do.html">What we do</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

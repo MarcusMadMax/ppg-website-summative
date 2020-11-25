@@ -14,24 +14,24 @@
 </head>
 
 <body>
-    <div class='wrapper about-page'>
+
+    <div data-index='1' class='wrapper about-page'>
 
         <header>
-            <nav class="nav">
+            <nav>
                 <div class="bars">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
                 <div class="nav-content">
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/img/logo/PPG_Logo_NEW.svg" alt=""></a>
-                    </div>
+                    <a id="logo" href="index.html"><img src="assets/img/logo/PPG_Logo_NEW.svg" alt=""></a>
                     <ul>
-                        <li class="nav-link"><a class="work" href="index.html">Home</a></li>
-                        <li class="nav-link"><a class="about" href="about.html">About</a></li>
-                        <li class="nav-link"><a class="solutions" href="our-work.html">Our Work</a></li>
-                        <li class="nav-link"><a class="contact" href="contact.html">contact</a></li>
+                        <li class="nav-link"><a data-page='home' class="home" href="index.html">Home</a></li>
+                        <li class="nav-link"><a data-page='about' class="about" href="about.html">About</a></li>
+                        <li class="nav-link"><a data-page='what-we-do' class="what-we-do" href="what-we-do.html">What we do</a>
+                        </li>
+                        <li class="nav-link"><a data-page='contact' class="contact" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -156,7 +156,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="our-work.html">Our Work</a></li>
+                        <li><a href="what-we-do.html">Our Work</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

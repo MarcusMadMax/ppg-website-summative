@@ -8,32 +8,31 @@ var moveIn = anime.timeline({
 moveIn
     .add({
         targets: '.nav-content',
+        translateX: ('100%'),
         autoplay: false,
         begin: function () {
             document.querySelector('.nav-content').style.display = 'block';
         },
         easing: 'linear'
-    }, 400)
+    })
 
     .add({
-        targets: '.nav-content li',
+        targets: '.nav-content ul li',
         translateX: ('100%'),
         delay: anime.stagger(500),
         autoplay: false,
         begin: function () {
-            document.querySelector('.nav-content li').style.display = 'block';
+            document.querySelector('.nav-content ul li').style.display = 'block';
         },
     }, 800)
 
-    .add({
-        targets: '.nav-content .logo',
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content .logo').style.display = 'block';
-        },
-        duration: 10,
-        autoplay: false,
-    }, 900)
+    // .add({
+    //     targets: '#logo img',
+    //     opacity: [0, 1],
+    //     scale: [0,1],
+    //     duration: 10,
+    //     autoplay: false,
+    // }, 900)
 
 
 
@@ -46,7 +45,8 @@ var moveOut = anime.timeline({
 //Timelie Move Out
 moveOut
     .add({
-        targets: '.nav .nav-content',
+        targets: '.nav-content',
+        translateX: ('-100%'),
         autoplay: false,
         begin: function () {
             document.querySelector('.nav-content').style.display = 'none';
@@ -54,25 +54,25 @@ moveOut
     })
 
     .add({
-        targets: '.nav-content li',
-        translateX: ('100%'),
+        targets: '.nav-content ul li',
+        translateX: ('-100%'),
         delay: anime.stagger(500),
-        direction: 'reverse',
         autoplay: false,
         begin: function () {
-            document.querySelector('.nav-content li').style.display = 'none';
+            document.querySelector('.nav-content ul li').style.display = 'none';
         },
     }, 800)
 
-    .add({
-        targets: '.nav-content .logo',
-        duration: 10,
-        direction: 'reverse',
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content .logo').style.display = 'none';
-        },
-    }, 900)
+    // .add({
+    //     targets: '.nav-content a img',
+    //     translateX: ('100%'),
+    //     duration: 10,
+    //     autoplay: false,
+    //     begin: function () {
+    //         document.querySelector('.nav-content a img').style.display = 'none';
+    //     },
+    // }, 900)
+    
 
 //Changing hamburger / bars Move In / Move Out Execution
 const barsBtn = document.querySelector('.bars')
@@ -131,6 +131,5 @@ $(function () {
     })
 })
 
-
+//Taxonomy
 var mixer = mixitup('.container');
-
