@@ -1639,10 +1639,12 @@ header{
 .generic-page{
 
     main{
+        background-color: $main-color;
+        position: relative;
 
-       .top-section{
+        .top-section{
+           position: relative;
            width: 100vw;
-            border: 2px solid red;
             
             .main-img{
                 position: relative;
@@ -1652,65 +1654,172 @@ header{
                     z-index: 0;
                     width: 100%;
                     height: auto;
-                    object-fit: cover;
-                    display: block;
                     filter: brightness(.5);
                 }
             }
             
             .main-text{
-                border: 2px solid green;
                 position: absolute;
+                top: 0;
                 width: 100%;
                 height: 100%;
-                top: 50%;
-                transform: translateY(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h1{
                     font-size: 2em;
                     text-align: center;
                     font-weight: 700;
                     color: $highlight-color;
+                    text-shadow: 2px 2px 1px black;
+                }
+            }
+
+            @include respond-to('bp1.5'){
+                
+                .main-text{
+    
+                    h1{
+                        font-size: 4em;
+                    }
+                }
+            }
+
+            @include respond-to('bp2'){
+                
+                .main-text{
+                    width: 50%;
+                    margin: 0 auto;
+
+                    h1{
+                        font-size: 5em;
+                    }
                 }
             }
        } 
 
-       .divider{
+       .divider-section{
             position: relative;
+            top: -3em;
+            z-index: 5;
             width: 100vw;
-            overflow-x: hidden;
-            margin-top: -1em;
+            height: auto;
 
-            img{
-                position: relative;
-                z-index: 0;
-                width: 150%;
-                height: 10em;
-                object-fit: cover;
-                object-position: bottom;
-                display: block;
+            .divider-text{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 15vh;
+
+                img{
+                    width: 100vw;
+                    height: 100%;
+                }
+
+                h3{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: .7em;
+                    font-weight: 300;
+                    text-align: center;
+                    padding: 0 4em;
+
+                    span{
+                        color: $highkight-color;
+                        font-weight: 700;
+                    }
+                }
             }
 
-        .divider-text{
-            
-            h3{
-                position: absolute;
-                z-index: 100;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: .7em;
-                font-weight: 300;
-                text-align: center;
-                padding: 0 1em;
+            @include respond-to('bp1.5'){
 
-                span{
-                    color: $highkight-color;
-                    font-weight: 700;
+                .divider-text{
+                    height: 21vh;
+
+                    h3{
+                        font-size: 1.25em;
+                    }
                 }
             }
         }
 
-        } 
+        .images-section{
+            margin-top: 6em;
+
+            .top-images, .bottom-images{
+                display: flex;
+                flex-wrap: wrap;
+
+                .image{
+                    flex: 1 0 50%;
+
+                    img{
+                        width: 100%;
+                        height: 10em;
+                    }
+                }
+                
+            }
+
+            .top-full-width-image{
+                position: relative;
+                width: 100vw;
+                margin: 1em 0;
+
+                img{
+                    width: 100%;
+                    height: 5em;
+                }
+            }
+
+            .bottom-full-width-image{
+                position: relative;
+                width: 100vw;
+                margin: 1em 0 10em 0;
+
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: 7em;
+                }
+            }
+
+            @include respond-to('bp1.5'){
+                margin-top: 11em;
+
+                .top-images, .bottom-images{
+                    width: 90%;
+                    margin: 0 auto;
+
+                    .image{
+                        flex: 1 0 45%;
+                        margin: .5em;
+                    }
+                }
+
+                .top-full-width-image{
+
+                    img{
+                        height: 10em;
+                    }
+                }
+
+                .bottom-full-width-image{
+
+                    img{
+                        height: 9em;
+                    }
+                }
+            }
+
+            @include respond-to('bp2'){
+
+                .images-section{
+                    margin-top: 10em;
+            }
+        }
     }
 }
 
@@ -1718,11 +1827,13 @@ header{
 footer{
     position: relative;
     width: 100vw;
-    background-image: url('../img/backgrounds/footer-background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    // background-color: $highlight-color;
-    padding-top: 2em;
+
+    img{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 18em;
+    }
 
     .footer-content{
         position: relative;
@@ -1774,9 +1885,7 @@ footer{
     }
 
     .footer-links{
-        padding: 1em 0;
-        margin-top: -10px;
-        background-color: $main-color;
+        border: 1px solid transparent;
 
         ul{
             display: flex;
@@ -1794,11 +1903,50 @@ footer{
         }
     }
 
-    .color{
-        display: none;
+    @include respond-to('bp1.5'){
+
+        img{
+            height: 20em;
+        }
+
+        .footer-content{
+
+            .footer-address{
+                margin-top: 1.5em;
+
+                .footer-contact{
+                    font-size: 1.5em;
+                    margin: .25em 0;
+                    padding: 0;
+
+                    i{
+                        width: 1em;
+                    }
+                }
+            }
+        }
+
+        .footer-links{
+
+            ul{
+
+
+                li{
+                    a{
+                        font-size: 1.5em;
+                        padding: 1em;
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 
     @include respond-to('bp2'){
+
+        img{
+            height: 20em;
+        }
 
         .footer-content{
 
@@ -1836,6 +1984,10 @@ footer{
     @include respond-to('bp3'){
         padding: 5em 0;
 
+        img{
+            height: 28em;
+        }
+
         .footer-content{
             display: flex;
             justify-content: space-around;
@@ -1858,6 +2010,7 @@ footer{
     
             .footer-social{
                 margin: 0;
+
                 a{
     
                     .fa-instagram, .fa-linkedin-in{
@@ -1910,18 +2063,34 @@ footer{
             }
     
         }
-
-        .color{
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            width: 100vw;
-            height: 6em;
-            background-color: $main-color;
-        }
     }
+
+    .color{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100vw;
+        height: 6em;
+        background-color: $main-color;
+    }
+}
+
+//To control the coverage of images just apply the class to img tag
+.cover{
+    object-fit: cover;
+    object-position: center;
+}
+
+.fill{
+    object-fit: fill;
+    object-position: center;
+}
+
+.contain{
+    object-fit: contain;
+    object-position: center;
 }
 
 
