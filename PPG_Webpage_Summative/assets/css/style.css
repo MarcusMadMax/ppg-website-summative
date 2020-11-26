@@ -1318,12 +1318,12 @@ header nav .nav-content ul li a {
   }
 }
 
-.contact-page main .contact-form-container {
+.contact-page main .contact-form-section {
   background-color: #1A1B26;
   width: 100vw;
 }
 
-.contact-page main .contact-form-container .form {
+.contact-page main .contact-form-section .form {
   position: relative;
   z-index: 10;
   display: -webkit-box;
@@ -1337,24 +1337,24 @@ header nav .nav-content ul li a {
   color: #dddcdc;
 }
 
-.contact-page main .contact-form-container .form .group {
+.contact-page main .contact-form-section .form .group {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 90%;
           flex: 0 0 90%;
   margin: .5em 0;
 }
 
-.contact-page main .contact-form-container .form .group p {
+.contact-page main .contact-form-section .form .group p {
   font-size: 2em;
   color: #dddcdc;
   font-weight: 300;
 }
 
-.contact-page main .contact-form-container .form .group .formGroup :focus {
+.contact-page main .contact-form-section .form .group .formGroup :focus {
   color: #0A57A4;
 }
 
-.contact-page main .contact-form-container .form .group .formGroup input {
+.contact-page main .contact-form-section .form .group .formGroup input {
   font-size: 2em;
   padding: .25em;
   -webkit-box-sizing: border-box;
@@ -1365,7 +1365,7 @@ header nav .nav-content ul li a {
   background-color: #dddcdc;
 }
 
-.contact-page main .contact-form-container .form .group .formGroup textarea {
+.contact-page main .contact-form-section .form .group .formGroup textarea {
   width: 100%;
   margin: 0 auto;
   outline: none;
@@ -1376,21 +1376,298 @@ header nav .nav-content ul li a {
   color: #1A1B26;
   background-color: #dddcdc;
   font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
 }
 
-.contact-page main .contact-form-container .form .submit {
-  margin: 1em 0;
+.contact-page main .contact-form-section .form .submit {
+  margin: 2em 0;
   text-align: center;
   width: 100%;
 }
 
-.contact-page main .contact-form-container .form .submit input {
+.contact-page main .contact-form-section .form .submit input {
   color: #dddcdc;
   font-size: 1.5em;
   padding: .25em .55em;
   cursor: pointer;
   border-radius: .25em;
   background-color: #0a57a4;
+}
+
+@media (min-width: 45em) {
+  .contact-page main .contact-form-section {
+    padding-top: 2em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .contact-page main .contact-form-section .form .name-form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact-page main .contact-form-section .form .name-form-group .group {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+    margin: .5em;
+  }
+  .contact-page main .contact-form-section .form .submit input {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 55em) {
+  .contact-page main .contact-form-section .form .submit input {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 75em) {
+  .contact-page main .contact-form-section .form {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contact-page main .contact-form-section .form .name-form-group {
+    display: block;
+  }
+  .contact-page main .contact-form-section .form .group {
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+    margin-left: 2em;
+  }
+  .contact-page main .contact-form-section .form .group .formGroup textarea {
+    height: 20em;
+  }
+  .contact-page main .contact-form-section .form .submit input {
+    font-size: 2em;
+  }
+}
+
+.contact-page main .contact-address-section {
+  position: relative;
+}
+
+.contact-page main .contact-address-section .address h2 {
+  font-size: 2em;
+  text-align: center;
+  color: #1A1B26;
+  text-transform: uppercase;
+  margin-top: 1em;
+  font-weight: 700;
+}
+
+.contact-page main .contact-address-section .address p {
+  text-align: center;
+  margin-top: -1em;
+  letter-spacing: .25em;
+}
+
+.contact-page main .contact-address-section .address .addresses {
+  margin: 1em;
+}
+
+.contact-page main .contact-address-section .address .addresses a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-decoration: none;
+  color: #1A1B26;
+  margin: 0 auto;
+}
+
+.contact-page main .contact-address-section .address .addresses a .icon i {
+  font-size: 3em;
+  width: 1.5em;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #FA0029;
+  margin-right: .5em;
+}
+
+.contact-page main .contact-address-section .address .addresses a .phone h3, .contact-page main .contact-address-section .address .addresses a .email h3, .contact-page main .contact-address-section .address .addresses a .street-address h3 {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.contact-page main .contact-address-section .address .addresses a .phone h3 span, .contact-page main .contact-address-section .address .addresses a .email h3 span, .contact-page main .contact-address-section .address .addresses a .street-address h3 span {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact-page main .contact-address-section .address:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  background-color: #dddcdc;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 90vw;
+  height: .1em;
+}
+
+@media (min-width: 45em) {
+  .contact-page main .contact-address-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 2em 0;
+  }
+  .contact-page main .contact-address-section .address {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 46%;
+            flex: 0 0 46%;
+  }
+  .contact-page main .contact-address-section .address h2 {
+    text-align: left;
+    margin-left: 1em;
+  }
+  .contact-page main .contact-address-section .address p {
+    text-align: left;
+    margin-left: 1.8em;
+  }
+  .contact-page main .contact-address-section .address::after {
+    content: '';
+    display: none;
+  }
+}
+
+@media (min-width: 55em) {
+  .contact-page main .contact-address-section .address h2 {
+    font-size: 3em;
+    margin-left: .5em;
+  }
+  .contact-page main .contact-address-section .address p {
+    text-align: left;
+    margin-left: 1.8em;
+  }
+  .contact-page main .contact-address-section .address .addresses a .icon i {
+    font-size: 3em;
+    margin-right: 0em;
+  }
+  .contact-page main .contact-address-section .address .addresses a .phone h3, .contact-page main .contact-address-section .address .addresses a .email h3, .contact-page main .contact-address-section .address .addresses a .street-address h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+  .contact-page main .contact-address-section .address .addresses a .phone h3 span, .contact-page main .contact-address-section .address .addresses a .email h3 span, .contact-page main .contact-address-section .address .addresses a .street-address h3 span {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 75em) {
+  .contact-page main .contact-address-section .address {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 35%;
+            flex: 0 0 35%;
+  }
+  .contact-page main .contact-address-section .address h2 {
+    font-size: 2em;
+    margin-left: 1em;
+  }
+  .contact-page main .contact-address-section .address p {
+    text-align: left;
+    margin-left: 1.8em;
+  }
+  .contact-page main .contact-address-section .address .addresses a .phone h3, .contact-page main .contact-address-section .address .addresses a .email h3, .contact-page main .contact-address-section .address .addresses a .street-address h3 {
+    font-size: 1em;
+  }
+  .contact-page main .contact-address-section .address .addresses a .phone h3 span, .contact-page main .contact-address-section .address .addresses a .email h3 span, .contact-page main .contact-address-section .address .addresses a .street-address h3 span {
+    font-size: 2em;
+  }
+}
+
+.generic-page main .top-section {
+  width: 100vw;
+  border: 2px solid red;
+}
+
+.generic-page main .top-section .main-img {
+  position: relative;
+}
+
+.generic-page main .top-section .main-img img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.generic-page main .top-section .main-text {
+  border: 2px solid green;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.generic-page main .top-section .main-text h1 {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+  color: #dddcdc;
+}
+
+.generic-page main .divider {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+  margin-top: -1em;
+}
+
+.generic-page main .divider img {
+  position: relative;
+  z-index: 0;
+  width: 150%;
+  height: 10em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  display: block;
+}
+
+.generic-page main .divider .divider-text h3 {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: .7em;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.generic-page main .divider .divider-text h3 span {
+  color: #FA0029;
+  font-weight: 700;
 }
 
 footer {

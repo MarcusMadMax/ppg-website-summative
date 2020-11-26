@@ -100,36 +100,121 @@ for (i = 0; i < linkBtn.length; i++) {
     })
 }
 
-// const listComment = document.querySelector('List-comment-cricket')
 
-// function linksHover (){
-//     // if(listComment === 'none'){
-
-//     // }else{
-
-//     // }
-//     console.log('click')
-// }
-
-// var showLinkComment = document.querySelector('li .list-items')
-// showLinkComment.addEventListener('mouseover', linksHover)
+//Boat is moving in
 $(function () {
-    var anime1 = anime({
-        targets: '.main-section-am-cup-boat',
-        translateX: [0, '-50vw'],
-        easing: 'linear',
-        duration: 1000,
-        autoplay: false,
-    })
+    if($('.home-page .main-section').length > 0){
+        var anime1 = anime({
+            targets: '.main-section-am-cup-boat',
+            translateX: [0, '-50vw'],
+            easing: 'linear',
+            duration: 1000,
+            autoplay: false,
+        })
+    
+        var mainS = $('.home-page .main-section').offset().top
+        $(document).on('scroll', function () {
+    
+            var scrollTop = $(document).scrollTop()
+            var progress = (scrollTop - (mainS - 500)) / 900
+            anime1.seek(anime1.duration * progress)
+        })
+    }
 
-    var mainS = $('.home-page .main-section').offset().top
-    $(document).on('scroll', function () {
 
-        var scrollTop = $(document).scrollTop()
-        var progress = (scrollTop - (mainS - 500)) / 900
-        anime1.seek(anime1.duration * progress)
-    })
+    //Taxonomy
+    if($('.what-we-do-page .taxonomy-control-container .container').length > 0){
+        var mixer = mixitup('.what-we-do-page .taxonomy-control-container .container');
+    }
 })
 
-//Taxonomy
-var mixer = mixitup('.what-we-do-page .taxonomy-control-container .container');
+
+//Form
+//Event handler
+function checkFilledIn() {
+    var sValue = this.value
+    var oAlphabeticExp = /^[A-Za-z]*$/
+    var bResult = oAlphabeticExp.test(sValue)
+    var isValid = false
+
+    if (sValue == '') {
+        this.style.backgroundColor = 'red'
+        this.style.color = 'red'
+        this.innerHTML = 'Please fill in'
+    }else{
+        this.style.backgroundColor = 'green'
+        this.style.color = 'green'
+        this.innerHTML = 'Thank you'
+        isValid = true
+    }
+    return isValid
+}
+
+function checkLetters() {
+    var sValue = this.value
+    var oAlphabeticExp = /^[A-Za-z]*$/
+    var bResult = oAlphabeticExp.test(sValue)
+    var isValid = false
+
+    if (sValue == '') {
+        this.parentNode.previousElementSibling.style.color = '#FA0029'
+        this.parentNode.previousElementSibling.innerHTML = 'Please fill in'
+    } else if(bResult == false){
+        this.parentNode.previousElementSibling.style.color = '#FA0029'
+        this.parentNode.previousElementSibling.innerHTML = 'Only letters'
+    }else{
+        this.parentNode.previousElementSibling.style.color = 'green'
+        this.parentNode.previousElementSibling.innerHTML = 'Thanks'
+        isValid = true
+    }
+    return isValid
+}
+
+function checkEmail() {
+    var sEmail = this.value
+    var oAlphabeticExp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/
+    var bResult = oAlphabeticExp.test(sEmail)
+    var isValid = false
+
+    if (sEmail == '') {
+        this.parentNode.previousElementSibling.style.color = '#FA0029'
+        this.parentNode.previousElementSibling.innerHTML = 'Please fill in'
+    } else if(bResult == false){
+        this.parentNode.previousElementSibling.style.color = '#FA0029'
+        this.parentNode.previousElementSibling.innerHTML = 'Not a valid e-mail'
+    }else{
+        this.parentNode.previousElementSibling.style.color = 'green'
+        this.parentNode.previousElementSibling.innerHTML = 'Thanks'
+        isValid = true
+    }
+    return isValid
+}
+
+function checkAll(e){
+    e.preventDefault()
+    var isFirstName = checkLetters.call(oFirstName)
+    var isLastName = checkLetters.call(oLastName)
+    var isEmail = checkEmail.call(oEmail)
+    var isAllVaild =  isFirstName && isEmail && isLastName
+
+    if(isAllVaild == false){
+        e.preventDefault() 
+    }
+ }
+ 
+
+
+//Main programm
+var oFirstName = document.querySelector('#firstName')
+oFirstName.addEventListener('blur', checkLetters)
+
+var oLastName = document.querySelector('#lastName')
+oLastName.addEventListener('blur', checkLetters)
+
+var oEmail = document.querySelector('#email')
+oEmail.addEventListener('blur', checkEmail)
+
+
+var oForm = document.querySelector('.form')
+oForm.addEventListener('submit', checkAll)
+

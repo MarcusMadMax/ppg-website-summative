@@ -60,9 +60,10 @@ function checkEmail() {
 
 function checkAll(e){
     e.preventDefault()
-    var isName = checkLetters.call(oName)
+    var isFirstName = checkLetters.call(oFirstName)
+    var isLastName = checkLetters.call(oLastName)
     var isEmail = checkEmail.call(oEmail)
-    var isAllVaild =  isName && isEmail
+    var isAllVaild =  isFirstName && isEmail && isLastName
 
     if(isAllVaild == false){
         e.preventDefault() 
@@ -72,11 +73,11 @@ function checkAll(e){
 
 
 //Main programm
-var oName = document.querySelector('#name')
-oName.addEventListener('blur', checkLetters)
+var oFirstName = document.querySelector('#firstName')
+oFirstName.addEventListener('blur', checkLetters)
 
-// var oSubject = document.querySelector('#subject')
-// oSubject.addEventListener('blur', checkLetters)
+var oLastName = document.querySelector('#lastName')
+oLastName.addEventListener('blur', checkLetters)
 
 var oEmail = document.querySelector('#email')
 oEmail.addEventListener('blur', checkEmail)
