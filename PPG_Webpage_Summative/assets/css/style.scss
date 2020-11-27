@@ -213,7 +213,7 @@ header{
                     a{
                         display: block;
                         font-weight: 300;
-                        color: $white-color;
+                        color: red;
                         text-decoration: none;
                         font-size: 2em;
                     }
@@ -246,21 +246,22 @@ header{
         }
     
         @include respond-to('bp3'){
-
+            border: 3px solid green;
+            height: 150px;
             .bars {
                 display: none;
             }
     
             .nav-content{
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between;
                 align-items: center;
                 width: 100%;
                 height: 6em;
                 padding: 0 1em;
                 box-sizing: border-box;
                 left: 0;
-                background-color: $main-color;
+                // background-color: $main-color;
                 box-shadow: 0px 0px 5px black;
 
                 #logo{
@@ -557,7 +558,7 @@ header{
                 z-index: -1;
                 top: 0;
                 width: 100vw;
-                height: 150vh;
+                height: 100vh;
 
                 img{
                     height: 100%;
@@ -601,6 +602,7 @@ header{
 
                 .view-more{
                     @include the-buttons;
+                    margin-bottom: 6em;
                     width: 40%;
                     padding: .5em;
                     border: 6px solid $ppg-blue;
@@ -751,10 +753,11 @@ header{
             margin-top: 45vh;
             padding: 2em 0;
             box-sizing: border-box;
-            // background-image: url('../img/queens-warft/1904-queens-wharf-queens-street.jpg');
-            // background-blend-mode: screen;
-            // background-repeat: no-repeat;
-            // background-size: cover;
+            background-image: url('../img/queens-warft/1904-queens-wharf-queens-street.jpg');
+            background-blend-mode: screen;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: screen;
             background-color: $highlight-color;
 
             .the-header{
@@ -851,6 +854,7 @@ header{
                         text-align: center;
                         font-size: 3em;
                         color: $ppg-blue;
+                        font-weight: 700;
                     }
 
                     .brush-stroke{
@@ -936,8 +940,9 @@ header{
             position: relative;
             width: 100vw;
             height: 100%;
-            padding: 1em 0;
+            padding: 1em 0 4em 0;
             background-color: $highlight-color;
+            box-shadow: -2px -2px 5px black;
 
             .sustainability-certification{
                 width: 80%;
@@ -969,7 +974,7 @@ header{
             &::after{
                 content: '';
                 position: absolute;
-                top: 22vh;
+                top: 22em;
                 left: 0;
                 width: 100vw;
                 height: 15vh;
@@ -1046,7 +1051,7 @@ header{
                     left: 0;
                     width: 100vw;
                     height: 19vh;
-                    background-image: url('../img/backgrounds/footer-background.svg');
+                    background-image: url('../img/backgrounds/footer-background-dark.svg');
                     background-repeat: no-repeat;
                     background-position: bottom;
                     background-size: cover;
@@ -1076,7 +1081,7 @@ header{
 
                     button{
                         width: 8em;
-                        height: 3em;
+                        height: auto;
                         font-size: .5em;
                         padding: .5em;
                         margin: .5em;
@@ -1096,7 +1101,7 @@ header{
                 justify-content: center;
                 flex-wrap: wrap;
                 width: 100vw;
-                margin: 3em 0;
+                margin: 1em 0 3em 0;
 
                 .mix{
                     width: 8em;
@@ -1181,7 +1186,7 @@ header{
         .quote-section{
             position: relative;
             width: 75vw;
-            margin: 1em auto;
+            margin: 1em auto 3em auto;
             padding: 1em 0 0 0 ;
             background-color: rgba($color: $main-color, $alpha: 1);
 
@@ -1203,14 +1208,14 @@ header{
                 width: 70vw;
             }
             
-            &::before{
+            ::before{
                 content: '';
                 position: absolute;
-                top: -1.5em;
+                top: -1.25em;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 90vw;
-                height: .1em;
+                height: .01em;
                 background-color: $highlight-color;
             }
 
@@ -1257,6 +1262,7 @@ header{
         }
     }
 }
+
 
 //Contact
 .contact-page{
@@ -1454,6 +1460,7 @@ header{
 
         .contact-address-section{
             position: relative;
+            margin-bottom: 5em;
 
             .address{
              
@@ -1591,7 +1598,7 @@ header{
             }
 
             @include respond-to('bp3'){
-                
+                margin-bottom: 10em;
                 .address{
                     flex: 0 0 35%;
 
@@ -1637,9 +1644,9 @@ header{
 
 //Generic
 .generic-page{
+    background-color: $main-color;
 
     main{
-        background-color: $main-color;
         position: relative;
 
         .top-section{
@@ -1690,16 +1697,29 @@ header{
                 
                 .main-text{
                     width: 50%;
+                    left: 50%;
+                    transform: translateX(-50%);
                     margin: 0 auto;
 
                     h1{
-                        font-size: 5em;
+                        font-size: 7em;
+                        text-align: left;
+                    }
+                }
+            }
+
+            @include respond-to('bp3'){
+
+                .main-img{
+    
+                    img{
+                        height: 100vh;
                     }
                 }
             }
        } 
 
-       .divider-section{
+        .divider-section{
             position: relative;
             top: -3em;
             z-index: 5;
@@ -1743,6 +1763,26 @@ header{
                     }
                 }
             }
+
+            @include respond-to('bp2'){
+
+                .divider-text{
+
+                    h3{
+                        font-size: 1.8em;
+                    }
+                }
+            }
+
+            @include respond-to('bp3'){
+
+                .divider-text{
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 35vh;
+                }
+            }
         }
 
         .images-section{
@@ -1753,7 +1793,7 @@ header{
                 flex-wrap: wrap;
 
                 .image{
-                    flex: 1 0 50%;
+                    flex: 0 0 50%;
 
                     img{
                         width: 100%;
@@ -1782,7 +1822,7 @@ header{
                 img{
                     position: absolute;
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
                 }
             }
 
@@ -1790,11 +1830,10 @@ header{
                 margin-top: 11em;
 
                 .top-images, .bottom-images{
-                    width: 90%;
-                    margin: 0 auto;
+                    justify-content: center;
 
                     .image{
-                        flex: 1 0 45%;
+                        flex: 0 0 35%;
                         margin: .5em;
                     }
                 }
@@ -1805,19 +1844,33 @@ header{
                         height: 10em;
                     }
                 }
-
-                .bottom-full-width-image{
-
-                    img{
-                        height: 9em;
-                    }
-                }
             }
 
             @include respond-to('bp2'){
+                margin-top: 16em;
+            }
 
-                .images-section{
-                    margin-top: 10em;
+            @include respond-to('bp3'){
+                margin-top: 20em;
+
+                .top-images, .bottom-images{
+    
+                    .image{
+    
+                        img{
+                            width: 100%;
+                            height: 25em;
+                        }
+                    }
+                    
+                }
+
+                .top-full-width-image{
+
+                    img{
+                        height: 15em;
+                    }
+                }
             }
         }
     }
@@ -1867,8 +1920,9 @@ footer{
         }
 
         .footer-social{
+            width: fit-content;
             text-align: center;
-            margin: .5em 0;
+            margin: .5em auto;
 
             a{
 
@@ -1910,17 +1964,42 @@ footer{
         }
 
         .footer-content{
+            padding: 0 1em;
+            .footer-content-top{
+                display: flex;
+                justify-content: space-between;
 
-            .footer-address{
-                margin-top: 1.5em;
+                .footer-address{
+    
+                    .footer-contact{
+                        justify-content: left;
+                        margin: 2em;
+        
+                        a{
+                            transition: all 1s;
+                            font-size: 1.5em;
+        
+                            &:hover{
+                                color: $highkight-color;
+                            }
+                        }
 
-                .footer-contact{
-                    font-size: 1.5em;
-                    margin: .25em 0;
-                    padding: 0;
+                        i{
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+
+            .footer-social{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                a{
 
                     i{
-                        width: 1em;
+                        -webkit-text-stroke-width: 1px;
                     }
                 }
             }
@@ -1930,8 +2009,8 @@ footer{
 
             ul{
 
-
                 li{
+
                     a{
                         font-size: 1.5em;
                         padding: 1em;
@@ -1945,21 +2024,24 @@ footer{
     @include respond-to('bp2'){
 
         img{
-            height: 20em;
+            height: 21em;
         }
 
         .footer-content{
 
-            .footer-address{
-                margin-top: 1.5em;
-
-                .footer-contact{
-                    font-size: 1.5em;
-                    margin: .25em 0;
-                    padding: 0;
-
-                    i{
-                        width: 1em;
+            .footer-content-top{
+                padding: 0 1.5em;
+                .footer-address{
+                    margin-top: 1.5em;
+    
+                    .footer-contact{
+                        font-size: 1.5em;
+                        margin: .25em 0;
+                        padding: 0;
+    
+                        i{
+                            width: 1em;
+                        }
                     }
                 }
             }
@@ -1969,12 +2051,10 @@ footer{
 
             ul{
 
-
                 li{
+                    
                     a{
-                        font-size: 1.5em;
-                        padding: 1em;
-                        display: block;
+                        font-size: 2em;
                     }
                 }
             }
@@ -1982,69 +2062,67 @@ footer{
     }
 
     @include respond-to('bp3'){
-        padding: 5em 0;
 
         img{
-            height: 28em;
+            height: 16em;
         }
 
         .footer-content{
             display: flex;
             justify-content: space-around;
 
-            .footer-address{
-    
-                .footer-contact{
-                    justify-content: left;
-                    margin: 2em;
-    
-                    a{
-                        transition: all 1s;
-    
+            .footer-content-top{
+                align-items: center;
+
+                .footer-address{
+        
+                    .footer-contact{
+                        justify-content: left;
+
+                        i{
+                            color: $highkight-color;
+                        }
+        
+                        a{
+                            transition: all 1s;
+                        }
+
                         &:hover{
                             color: $highkight-color;
+
                         }
                     }
                 }
             }
     
             .footer-social{
-                margin: 0;
+                display: block;
+                margin-left: 6em;
 
                 a{
+                    margin: 0;
+                    padding: 0;
     
-                    .fa-instagram, .fa-linkedin-in{
-                        font-size: 5em;
-                        text-align: center;
-                        margin: .5em 1em;
-                        box-sizing: border-box;
-                        color: transparent;
-                        -webkit-text-stroke-width: .5px;
-                        -webkit-text-stroke-color: $highkight-color;
-                        transition: all 1s;
-    
+                    i{
+                        color: $highkight-color;
+                        -webkit-text-stroke-width: 0;
+
                         &:hover{
-                            -webkit-text-stroke-color: $white-color;
+                            color: $highlight-color;
                         }
                     }
                 }
             }
     
             .footer-links{
-                position: relative;
-                z-index: 100;
-                padding: 0;
-                background-color: transparent;
     
                 ul{
                     display: flex;
                     flex-direction: column;
     
                     li{
-                        margin: 1em;
 
                         a{
-                            font-size: 1.5em;
                             display: block;
                             margin: 0;
                             padding: 0;
@@ -2072,15 +2150,25 @@ footer{
         left: 0;
         z-index: 1;
         width: 100vw;
-        height: 6em;
+        height: 3em;
         background-color: $main-color;
     }
 }
 
 //To control the coverage of images just apply the class to img tag
-.cover{
+.cover-top{
+    object-fit: cover;
+    object-position: top;
+}
+
+.cover-center{
     object-fit: cover;
     object-position: center;
+}
+
+.cover-bottom{
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .fill{
@@ -2092,7 +2180,3 @@ footer{
     object-fit: contain;
     object-position: center;
 }
-
-
-
-

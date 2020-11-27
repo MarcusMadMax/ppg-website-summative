@@ -1,3 +1,17 @@
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.querySelector("nav").style.height = "70px";
+    document.getElementById("img").style.height = "60px";
+  } else {
+    document.querySelector("nav").style.height = "150px";
+    document.getElementById("img").style.height = "140px";
+  }
+}
+
+
 //Timeline for logo to move up & navigation to move in / out
 var moveIn = anime.timeline({
     easing: 'spring(1, 80, 10, 0)',
@@ -128,7 +142,7 @@ $(function () {
     }
 })
 
-
+if($('#firstName #lastName #email .form').length > 0){
 //Form
 //Event handler
 function checkFilledIn() {
@@ -218,3 +232,4 @@ oEmail.addEventListener('blur', checkEmail)
 var oForm = document.querySelector('.form')
 oForm.addEventListener('submit', checkAll)
 
+}

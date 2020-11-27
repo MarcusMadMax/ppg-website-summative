@@ -101,7 +101,7 @@ header nav .nav-content ul li {
 header nav .nav-content ul li a {
   display: block;
   font-weight: 300;
-  color: #fff;
+  color: red;
   text-decoration: none;
   font-size: 2em;
 }
@@ -119,6 +119,10 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 75em) {
+  header nav {
+    border: 3px solid green;
+    height: 150px;
+  }
   header nav .bars {
     display: none;
   }
@@ -126,9 +130,6 @@ header nav .nav-content ul li a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -138,7 +139,6 @@ header nav .nav-content ul li a {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     left: 0;
-    background-color: #1A1B26;
     -webkit-box-shadow: 0px 0px 5px black;
             box-shadow: 0px 0px 5px black;
   }
@@ -546,7 +546,7 @@ header nav .nav-content ul li a {
   z-index: -1;
   top: 0;
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
   -webkit-filter: opacity(0.2);
           filter: opacity(0.2);
   display: block;
@@ -727,6 +727,7 @@ header nav .nav-content ul li a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid #fff;
+  margin-bottom: 6em;
   width: 40%;
   padding: .5em;
   border: 6px solid #0A57A4;
@@ -832,6 +833,11 @@ header nav .nav-content ul li a {
   padding: 2em 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
   background-color: #dddcdc;
 }
 
@@ -922,6 +928,7 @@ header nav .nav-content ul li a {
   text-align: center;
   font-size: 3em;
   color: #0A57A4;
+  font-weight: 700;
 }
 
 .about-page main .clients-section .clients-section-content .clients-section-content-header .brush-stroke {
@@ -989,8 +996,10 @@ header nav .nav-content ul li a {
   position: relative;
   width: 100vw;
   height: 100%;
-  padding: 1em 0;
+  padding: 1em 0 4em 0;
   background-color: #dddcdc;
+  -webkit-box-shadow: -2px -2px 5px black;
+          box-shadow: -2px -2px 5px black;
 }
 
 .about-page main .sustainability-section .sustainability-certification {
@@ -1020,7 +1029,7 @@ header nav .nav-content ul li a {
 .about-page main .sustainability-section::after {
   content: '';
   position: absolute;
-  top: 22vh;
+  top: 22em;
   left: 0;
   width: 100vw;
   height: 15vh;
@@ -1067,7 +1076,7 @@ header nav .nav-content ul li a {
   left: 0;
   width: 100vw;
   height: 19vh;
-  background-image: url("../img/backgrounds/footer-background.svg");
+  background-image: url("../img/backgrounds/footer-background-dark.svg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -1103,7 +1112,7 @@ header nav .nav-content ul li a {
 
 .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
   width: 8em;
-  height: 3em;
+  height: auto;
   font-size: .5em;
   padding: .5em;
   margin: .5em;
@@ -1126,7 +1135,7 @@ header nav .nav-content ul li a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100vw;
-  margin: 3em 0;
+  margin: 1em 0 3em 0;
 }
 
 .what-we-do-page main .taxonomy .container .mix {
@@ -1196,7 +1205,7 @@ header nav .nav-content ul li a {
 .what-we-do-page main .quote-section {
   position: relative;
   width: 75vw;
-  margin: 1em auto;
+  margin: 1em auto 3em auto;
   padding: 1em 0 0 0;
   background-color: #1a1b26;
 }
@@ -1220,15 +1229,15 @@ header nav .nav-content ul li a {
   width: 70vw;
 }
 
-.what-we-do-page main .quote-section::before {
+.what-we-do-page main .quote-section ::before {
   content: '';
   position: absolute;
-  top: -1.5em;
+  top: -1.25em;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 90vw;
-  height: .1em;
+  height: .01em;
   background-color: #dddcdc;
 }
 
@@ -1456,6 +1465,7 @@ header nav .nav-content ul li a {
 
 .contact-page main .contact-address-section {
   position: relative;
+  margin-bottom: 5em;
 }
 
 .contact-page main .contact-address-section .address h2 {
@@ -1575,6 +1585,9 @@ header nav .nav-content ul li a {
 }
 
 @media (min-width: 75em) {
+  .contact-page main .contact-address-section {
+    margin-bottom: 10em;
+  }
   .contact-page main .contact-address-section .address {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 35%;
@@ -1596,8 +1609,11 @@ header nav .nav-content ul li a {
   }
 }
 
-.generic-page main {
+.generic-page {
   background-color: #1A1B26;
+}
+
+.generic-page main {
   position: relative;
 }
 
@@ -1652,10 +1668,20 @@ header nav .nav-content ul li a {
 @media (min-width: 55em) {
   .generic-page main .top-section .main-text {
     width: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     margin: 0 auto;
   }
   .generic-page main .top-section .main-text h1 {
-    font-size: 5em;
+    font-size: 7em;
+    text-align: left;
+  }
+}
+
+@media (min-width: 75em) {
+  .generic-page main .top-section .main-img img {
+    height: 100vh;
   }
 }
 
@@ -1704,6 +1730,21 @@ header nav .nav-content ul li a {
   }
 }
 
+@media (min-width: 55em) {
+  .generic-page main .divider-section .divider-text h3 {
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width: 75em) {
+  .generic-page main .divider-section .divider-text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 35vh;
+  }
+}
+
 .generic-page main .images-section {
   margin-top: 6em;
 }
@@ -1717,9 +1758,9 @@ header nav .nav-content ul li a {
 }
 
 .generic-page main .images-section .top-images .image, .generic-page main .images-section .bottom-images .image {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
 
 .generic-page main .images-section .top-images .image img, .generic-page main .images-section .bottom-images .image img {
@@ -1747,7 +1788,7 @@ header nav .nav-content ul li a {
 .generic-page main .images-section .bottom-full-width-image img {
   position: absolute;
   width: 100%;
-  height: 7em;
+  height: 10em;
 }
 
 @media (min-width: 45em) {
@@ -1755,20 +1796,37 @@ header nav .nav-content ul li a {
     margin-top: 11em;
   }
   .generic-page main .images-section .top-images, .generic-page main .images-section .bottom-images {
-    width: 90%;
-    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .generic-page main .images-section .top-images .image, .generic-page main .images-section .bottom-images .image {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 45%;
-            flex: 1 0 45%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 35%;
+            flex: 0 0 35%;
     margin: .5em;
   }
   .generic-page main .images-section .top-full-width-image img {
     height: 10em;
   }
-  .generic-page main .images-section .bottom-full-width-image img {
-    height: 9em;
+}
+
+@media (min-width: 55em) {
+  .generic-page main .images-section {
+    margin-top: 16em;
+  }
+}
+
+@media (min-width: 75em) {
+  .generic-page main .images-section {
+    margin-top: 20em;
+  }
+  .generic-page main .images-section .top-images .image img, .generic-page main .images-section .bottom-images .image img {
+    width: 100%;
+    height: 25em;
+  }
+  .generic-page main .images-section .top-full-width-image img {
+    height: 15em;
   }
 }
 
@@ -1827,8 +1885,11 @@ footer .footer-content .footer-address .footer-contact i {
 }
 
 footer .footer-content .footer-social {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: center;
-  margin: .5em 0;
+  margin: .5em auto;
 }
 
 footer .footer-content .footer-social a i {
@@ -1862,16 +1923,48 @@ footer .footer-links ul li a {
   footer img {
     height: 20em;
   }
-  footer .footer-content .footer-address {
-    margin-top: 1.5em;
+  footer .footer-content {
+    padding: 0 1em;
   }
-  footer .footer-content .footer-address .footer-contact {
+  footer .footer-content .footer-content-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer-content .footer-content-top .footer-address .footer-contact {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    margin: 2em;
+  }
+  footer .footer-content .footer-content-top .footer-address .footer-contact a {
+    -webkit-transition: all 1s;
+    transition: all 1s;
     font-size: 1.5em;
-    margin: .25em 0;
-    padding: 0;
   }
-  footer .footer-content .footer-address .footer-contact i {
-    width: 1em;
+  footer .footer-content .footer-content-top .footer-address .footer-contact a:hover {
+    color: #FA0029;
+  }
+  footer .footer-content .footer-content-top .footer-address .footer-contact i {
+    font-size: 2em;
+  }
+  footer .footer-content .footer-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer-content .footer-social a i {
+    -webkit-text-stroke-width: 1px;
   }
   footer .footer-links ul li a {
     font-size: 1.5em;
@@ -1882,32 +1975,30 @@ footer .footer-links ul li a {
 
 @media (min-width: 55em) {
   footer img {
-    height: 20em;
+    height: 21em;
   }
-  footer .footer-content .footer-address {
+  footer .footer-content .footer-content-top {
+    padding: 0 1.5em;
+  }
+  footer .footer-content .footer-content-top .footer-address {
     margin-top: 1.5em;
   }
-  footer .footer-content .footer-address .footer-contact {
+  footer .footer-content .footer-content-top .footer-address .footer-contact {
     font-size: 1.5em;
     margin: .25em 0;
     padding: 0;
   }
-  footer .footer-content .footer-address .footer-contact i {
+  footer .footer-content .footer-content-top .footer-address .footer-contact i {
     width: 1em;
   }
   footer .footer-links ul li a {
-    font-size: 1.5em;
-    padding: 1em;
-    display: block;
+    font-size: 2em;
   }
 }
 
 @media (min-width: 75em) {
-  footer {
-    padding: 5em 0;
-  }
   footer img {
-    height: 28em;
+    height: 16em;
   }
   footer .footer-content {
     display: -webkit-box;
@@ -1916,42 +2007,40 @@ footer .footer-links ul li a {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  footer .footer-content .footer-address .footer-contact {
+  footer .footer-content .footer-content-top {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer-content .footer-content-top .footer-address .footer-contact {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
             justify-content: left;
-    margin: 2em;
   }
-  footer .footer-content .footer-address .footer-contact a {
+  footer .footer-content .footer-content-top .footer-address .footer-contact i {
+    color: #FA0029;
+  }
+  footer .footer-content .footer-content-top .footer-address .footer-contact a {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  footer .footer-content .footer-address .footer-contact a:hover {
+  footer .footer-content .footer-content-top .footer-address .footer-contact:hover {
     color: #FA0029;
   }
   footer .footer-content .footer-social {
+    display: block;
+    margin-left: 6em;
+  }
+  footer .footer-content .footer-social a {
     margin: 0;
-  }
-  footer .footer-content .footer-social a .fa-instagram, footer .footer-content .footer-social a .fa-linkedin-in {
-    font-size: 5em;
-    text-align: center;
-    margin: .5em 1em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    color: transparent;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: #FA0029;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-  }
-  footer .footer-content .footer-social a .fa-instagram:hover, footer .footer-content .footer-social a .fa-linkedin-in:hover {
-    -webkit-text-stroke-color: #fff;
-  }
-  footer .footer-content .footer-links {
-    position: relative;
-    z-index: 100;
     padding: 0;
-    background-color: transparent;
+  }
+  footer .footer-content .footer-social a i {
+    color: #FA0029;
+    -webkit-text-stroke-width: 0;
+  }
+  footer .footer-content .footer-social a i:hover {
+    color: #dddcdc;
   }
   footer .footer-content .footer-links ul {
     display: -webkit-box;
@@ -1962,11 +2051,7 @@ footer .footer-links ul li a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  footer .footer-content .footer-links ul li {
-    margin: 1em;
-  }
   footer .footer-content .footer-links ul li a {
-    font-size: 1.5em;
     display: block;
     margin: 0;
     padding: 0;
@@ -1988,15 +2073,29 @@ footer .color {
   left: 0;
   z-index: 1;
   width: 100vw;
-  height: 6em;
+  height: 3em;
   background-color: #1A1B26;
 }
 
-.cover {
+.cover-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.cover-center {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.cover-bottom {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 .fill {
