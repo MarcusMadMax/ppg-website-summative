@@ -1,118 +1,79 @@
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
+const bars = document.querySelector('.bars')
+const nav = document.querySelector('.nav-links')
+const navLinks = document.querySelectorAll('.nav-links li')
+const navBarLogo = document.querySelector('.logo')
+const navBar = document.querySelector('nav')
+const navLinkA = document.querySelectorAll('.nav-links li a')
+const address = document.querySelector('.contact-city')
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.querySelector("nav").style.height = "70px";
-    document.getElementById("img").style.height = "60px";
-  } else {
-    document.querySelector("nav").style.height = "150px";
-    document.getElementById("img").style.height = "140px";
-  }
+const navSlide = () => {
+    bars.addEventListener('click', () => {
+        //Toggle Nav
+        nav.classList.toggle('nav-active')
+
+        //Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ''
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards  ${index / 7 + .5}s`
+            }
+        })
+
+        //Bars Animation
+        bars.classList.toggle('toggle')
+
+        //Logo Animation
+        navBarLogo.classList.toggle('navBarLogoReize')
+    })
+
 }
+navSlide()
 
 
-//Timeline for logo to move up & navigation to move in / out
-var moveIn = anime.timeline({
-    easing: 'spring(1, 80, 10, 0)',
-    autoplay: false,
-    duration: 0.1,
-})
+// When scrolling NavBar changes in Desktop View
+window.onscroll = function () { scrollFunction() };
 
-moveIn
-    .add({
-        targets: '.nav-content',
-        translateX: ('100%'),
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content').style.display = 'block';
-        },
-        easing: 'linear'
-    })
+scrollFunction = () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navBar.classList.add('style-nav-bar-in')
+        navBar.classList.remove('style-nav-bar-out')
+        navBarLogo.classList.add('style-logo-in')
+        navBarLogo.classList.remove('style-logo-out')
+        // navLinksA.classList.add('style-links-in')
+        // navLinksA.classList.remove('style-links-out')
 
-    .add({
-        targets: '.nav-content ul li',
-        translateX: ('100%'),
-        delay: anime.stagger(500),
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content ul li').style.display = 'block';
-        },
-    }, 800)
-
-    // .add({
-    //     targets: '#logo img',
-    //     opacity: [0, 1],
-    //     scale: [0,1],
-    //     duration: 10,
-    //     autoplay: false,
-    // }, 900)
-
-
-
-var moveOut = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: .1,
-    autoplay: false,
-})
-
-//Timelie Move Out
-moveOut
-    .add({
-        targets: '.nav-content',
-        translateX: ('-100%'),
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content').style.display = 'none';
-        },
-    })
-
-    .add({
-        targets: '.nav-content ul li',
-        translateX: ('-100%'),
-        delay: anime.stagger(500),
-        autoplay: false,
-        begin: function () {
-            document.querySelector('.nav-content ul li').style.display = 'none';
-        },
-    }, 800)
-
-    // .add({
-    //     targets: '.nav-content a img',
-    //     translateX: ('100%'),
-    //     duration: 10,
-    //     autoplay: false,
-    //     begin: function () {
-    //         document.querySelector('.nav-content a img').style.display = 'none';
-    //     },
-    // }, 900)
-    
-
-//Changing hamburger / bars Move In / Move Out Execution
-const barsBtn = document.querySelector('.bars')
-let menuOpen = false
-barsBtn.addEventListener('click', () => {
-    if (!menuOpen) {
-        moveIn.play()
-        barsBtn.classList.add('change')
-        menuOpen = true
     } else {
-        moveOut.play()
-        barsBtn.classList.remove('change')
-        menuOpen = false
-    }
-})
+        navBar.classList.remove('style-nav-bar-in')
+        navBar.classList.add('style-nav-bar-out')
+        navBarLogo.classList.remove('style-logo-in')
+        navBarLogo.classList.add('style-logo-out')
+        // navLinksA.classList.remove('style-links-in')
+        // navLinksA.classList.add('style-links-out')
 
-//Blending nav out when clicking link
-let linkBtn = document.querySelectorAll('.nav-content ul li a')
-for (i = 0; i < linkBtn.length; i++) {
-    let link = linkBtn[i]
-    link.addEventListener('click', () => {
-        moveOut.play()
-        barsBtn.classList.remove('change')
-        menuOpen = false
-    })
+    }
+
+    //Animate Links
+    // navLinksA.forEach((link, index) => {
+    //     if (link.style.animation) {
+    //         link.style.animation = ''
+    //     } else {
+    //         link.style.animation = ('style-links-in')
+    //     }
+    // })
+
+    // navLinksA.forEach() = () => {
+    //     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    //         navLinksA.classList.add('style-links-in')
+    //         navLinksA.classList.remove('style-links-out')
+    //     } else {
+    //         navLinksA.classList.remove('style-links-in')
+    //         navLinksA.classList.add('style-links-out')
+    //     }
+    // }
+
 }
+
 
 
 //Boat is moving in
@@ -233,3 +194,22 @@ var oForm = document.querySelector('.form')
 oForm.addEventListener('submit', checkAll)
 
 }
+
+
+//Contact
+$(function () {
+    $('.face').on('click', function () {
+        var sState = $(this).data('state')
+
+        if (sState == 'closed') {
+            //open it
+            $(this).next().slideDown(400)
+            $(this).animate(1000).css('border-bottom', '2px solid rgba(0, 0, 0, 0)')
+            sState = $(this).data('state', 'open')
+        } else {
+            $(this).next().slideUp(600)
+            $(this).animate(1000).css('border-bottom', '2px solid rgba(0, 0, 0, 0.5)')
+            sState = $(this).data('state', 'closed')
+        }
+    })
+})
