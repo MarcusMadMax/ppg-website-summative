@@ -13,8 +13,11 @@ body {
 }
 
 header nav {
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  z-index: 7;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,32 +27,14 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 12vh;
-  background-color: #1a1b26;
-  font-family: 'Poppins', sans-serif;
-}
-
-header nav .logo {
-  position: relative;
-  z-index: 50;
-  height: 5em;
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-}
-
-header nav .logo a img {
-  width: auto;
-  height: 100%;
 }
 
 header nav .nav-links {
   position: absolute;
   right: 0;
-  height: 92vh;
-  top: 8vh;
-  padding-top: 6em;
+  top: 0;
+  z-index: 60;
+  height: 100vh;
   background-color: #1a1b26;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,7 +60,7 @@ header nav .nav-links {
 
 header nav .nav-links li {
   opacity: 0;
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 header nav .nav-links li a {
@@ -88,6 +73,10 @@ header nav .nav-links li a {
 }
 
 header nav .bars {
+  position: fixed;
+  z-index: 70;
+  right: 0;
+  top: 0;
   display: block;
   cursor: pointer;
 }
@@ -122,25 +111,22 @@ header nav .toggle .bar3 {
 header nav .navBarLogoReize {
   -webkit-transform: scale(1.8) translate(18vw, 9vh);
           transform: scale(1.8) translate(18vw, 9vh);
+  display: block;
 }
 
 @media (min-width: 45em) {
   header nav {
     padding: 0 2em;
   }
-  header nav .logo {
-    height: 6em;
-  }
-  header nav .logo a img {
-    width: auto;
-    height: 100%;
-  }
   header nav .nav-links {
-    padding-top: 5em;
+    padding-top: 0;
   }
   header nav .nav-links li a {
     font-size: 3em;
-    margin: 1em 0;
+  }
+  header nav .nav-links li a img {
+    width: auto;
+    height: 5em;
   }
   header nav .bars div {
     width: 3.5em;
@@ -166,16 +152,6 @@ header nav .navBarLogoReize {
 }
 
 @media (min-width: 55em) {
-  header nav .logo {
-    height: 8em;
-  }
-  header nav .logo a img {
-    width: auto;
-    height: 100%;
-  }
-  header nav .nav-links {
-    padding-top: 5em;
-  }
   header nav .nav-links li a {
     font-size: 4em;
   }
@@ -204,28 +180,24 @@ header nav .navBarLogoReize {
 
 @media (min-width: 75em) {
   header nav {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    background-color: rgba(26, 27, 38, 0.5);
-    position: fixed;
-    padding: 0 2em;
-    top: 0;
-    width: 100%;
-    -webkit-box-shadow: 5px 5px 2px rgba(0, 0, 0, 0);
-            box-shadow: 5px 5px 2px rgba(0, 0, 0, 0);
-    min-height: 1vh;
-  }
-  header nav .logo {
+    z-index: 30;
     height: 10em;
+    background-color: rgba(26, 27, 38, 0.5);
   }
-  header nav .nav-links {
+  header nav .nav-top {
+    width: 100%;
+  }
+  header nav .nav-top .nav-links {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    width: 40%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 100%;
     padding-top: 0;
     top: 0;
@@ -233,18 +205,22 @@ header nav .navBarLogoReize {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  header nav .nav-links li {
+  header nav .nav-top .nav-links li {
     position: relative;
     opacity: 1;
     margin: 0;
     padding: 0;
   }
-  header nav .nav-links li a {
+  header nav .nav-top .nav-links li a {
     margin: 0 .5em;
     font-size: 2em;
     color: bisque;
   }
-  header nav .nav-links li .slider {
+  header nav .nav-top .nav-links li a img {
+    height: 4em;
+    margin-right: 16vw;
+  }
+  header nav .nav-top .nav-links li .slider {
     position: absolute;
     left: 10%;
     top: 90%;
@@ -255,7 +231,7 @@ header nav .navBarLogoReize {
     -webkit-transition: all .5s ease-out;
     transition: all .5s ease-out;
   }
-  header nav .nav-links li:hover .slider {
+  header nav .nav-top .nav-links li:hover .slider {
     width: 80%;
   }
   header nav .bars {
@@ -295,15 +271,17 @@ header nav .nav-active {
 }
 
 header nav .style-logo-in {
-  height: 6em;
-  -webkit-transition: height .5s ease-out;
-  transition: height .5s ease-out;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
 }
 
 header nav .style-logo-out {
-  height: 8em;
-  -webkit-transition: height .5s ease-out;
-  transition: height .5s ease-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
 }
 
 header nav .style-links-in {
@@ -320,7 +298,7 @@ header nav .style-links-out {
 }
 
 header .style-nav-bar-in {
-  min-height: 8vh;
+  height: 6em;
   -webkit-box-shadow: 0px 0px 10px black;
           box-shadow: 0px 0px 10px black;
   background-color: #1a1b26;
@@ -329,7 +307,7 @@ header .style-nav-bar-in {
 }
 
 header .style-nav-bar-out {
-  min-height: 12vh;
+  height: 10em;
   -webkit-box-shadow: 5px 5px 2px rgba(0, 0, 0, 0);
           box-shadow: 5px 5px 2px rgba(0, 0, 0, 0);
   background-color: rgba(26, 27, 38, 0.6);
@@ -374,7 +352,7 @@ header .style-nav-bar-out {
 }
 
 .home-page main .quote-section h1 span {
-  color: bisque;
+  color: #cecece;
   font-weight: 700;
   font-size: 2em;
   text-shadow: 0px 0px 15px #FA0029;
@@ -502,6 +480,8 @@ header .style-nav-bar-out {
 
 .home-page main .link-section ul li .list-items .list-comments button:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
 }
 
 .home-page main .link-section ul li .list-items .list-comments button a {
@@ -519,7 +499,7 @@ header .style-nav-bar-out {
   .home-page main .link-section ul li .list-items .list-comments a {
     height: 100%;
     width: 80%;
-    font-size: 3em;
+    font-size: em;
     display: block;
     margin: 0 auto;
     display: -webkit-box;
@@ -821,6 +801,8 @@ header .style-nav-bar-out {
 
 .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments button:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
 }
 
 .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments button a {
@@ -838,7 +820,7 @@ header .style-nav-bar-out {
   .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments a {
     height: 100%;
     width: 80%;
-    font-size: 3em;
+    font-size: em;
     display: block;
     margin: 0 auto;
     display: -webkit-box;
@@ -880,11 +862,12 @@ header .style-nav-bar-out {
   margin-bottom: 6em;
   width: 40%;
   padding: .5em;
-  border: 6px solid #0A57A4;
 }
 
 .home-page main .what-we-do-section .what-we-do-section-content .view-more:hover {
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
 }
 
 .home-page main .what-we-do-section .what-we-do-section-content .view-more a {
@@ -951,7 +934,13 @@ header .style-nav-bar-out {
             flex: 1 0 25%;
   }
   .home-page main .what-we-do-section .what-we-do-section-content ul li .list-items .list-comments a {
-    font-size: 5em;
+    font-size: 3em;
+  }
+  .home-page main .what-we-do-section .what-we-do-section-content .view-more a:hover {
+    color: #1a1b26;
+  }
+  .home-page main .what-we-do-section .what-we-do-section-content .view-more:hover {
+    border: 1px solid rgba(26, 27, 38, 0.1);
   }
 }
 
@@ -983,12 +972,12 @@ header .style-nav-bar-out {
   padding: 2em 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-image: url("../img/queens-warft/1904-queens-wharf-queens-street.jpg");
+  background-image: url("../img/backgrounds/cool-background.png");
   background-blend-mode: screen;
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: screen;
-  background-color: bisque;
+  background-color: #cecece;
 }
 
 .about-page main .about-section .the-header {
@@ -1099,10 +1088,13 @@ header .style-nav-bar-out {
 
 .about-page main .clients-section .clients-section-content .clients img {
   border: 1px solid transparent;
-  width: 20vw;
+  width: 10vw;
   height: auto;
   display: block;
-  margin: 1em auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 15%;
+          flex: 1 0 15%;
+  margin: 1em;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
@@ -1129,12 +1121,13 @@ header .style-nav-bar-out {
     margin-top: -4em;
   }
   .about-page main .clients-section .clients-section-content .clients {
-    width: 60vw;
+    width: 90vw;
     padding: 2em 0;
   }
   .about-page main .clients-section .clients-section-content .clients img {
-    width: 10em;
-    padding: 1em 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 2em;
+            flex: 0 0 2em;
   }
   .about-page main .clients-section .clients-section-content .clients img:hover {
     -webkit-filter: grayscale(0%);
@@ -1147,7 +1140,12 @@ header .style-nav-bar-out {
   width: 100vw;
   height: 100%;
   padding: 1em 0 4em 0;
-  background-color: bisque;
+  background-image: url("../img/backgrounds/cool-background.png");
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: #cecece;
   -webkit-box-shadow: -2px -2px 5px black;
           box-shadow: -2px -2px 5px black;
 }
@@ -1159,13 +1157,14 @@ header .style-nav-bar-out {
 
 .about-page main .sustainability-section .sustainability-certification h1 {
   text-transform: uppercase;
-  color: #1A1B26;
-  font-size: 1.25em;
+  color: #0A57A4;
+  font-weight: 700;
+  font-size: 2em;
   text-align: center;
 }
 
 .about-page main .sustainability-section .sustainability-certification p {
-  color: #fff;
+  color: #1A1B26;
   text-align: center;
 }
 
@@ -1174,16 +1173,6 @@ header .style-nav-bar-out {
   width: 50vw;
   margin: 0 auto;
   padding-top: 1em;
-}
-
-.about-page main .sustainability-section::after {
-  content: '';
-  position: absolute;
-  top: 22em;
-  left: 0;
-  width: 100vw;
-  height: 15vh;
-  background-color: bisque;
 }
 
 @media (min-width: 55em) {
@@ -1203,13 +1192,13 @@ header .style-nav-bar-out {
   }
 }
 
-@media (min-width: 55em) {
+@media (min-width: 75em) {
   .about-page main .sustainability-section .sustainability-certification h1 {
     font-size: 6em;
     color: #0A57A4;
   }
   .about-page main .sustainability-section .sustainability-certification p {
-    font-size: 3em;
+    font-size: 2em;
     margin: 1em 0 0 0;
   }
   .about-page main .sustainability-section .sustainability-certification-img img {
@@ -1228,7 +1217,7 @@ header .style-nav-bar-out {
   height: 19vh;
   background-image: url("../img/backgrounds/footer-background-dark.svg");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 
@@ -1247,7 +1236,7 @@ header .style-nav-bar-out {
   position: relative;
   top: 1em;
   left: 1em;
-  z-index: 90;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1285,10 +1274,10 @@ header .style-nav-bar-out {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100vw;
-  margin: 1em 0 3em 0;
+  margin: 1em auto 3em auto;
 }
 
-.what-we-do-page main .taxonomy .container .mix {
+.what-we-do-page main .taxonomy .container .events {
   width: 8em;
   height: auto;
   -webkit-box-flex: 1;
@@ -1296,7 +1285,7 @@ header .style-nav-bar-out {
           flex: 1 0 33.3%;
 }
 
-.what-we-do-page main .taxonomy .container .mix img {
+.what-we-do-page main .taxonomy .container .events img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1338,6 +1327,8 @@ header .style-nav-bar-out {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    position: relative;
+    z-index: 10;
   }
   .what-we-do-page main .taxonomy .taxonomy-control-container .taxonomy-control-container-buttons button {
     cursor: pointer;
@@ -1354,17 +1345,17 @@ header .style-nav-bar-out {
 
 .what-we-do-page main .quote-section {
   position: relative;
-  width: 75vw;
-  margin: 1em auto 3em auto;
-  padding: 1em 0 0 0;
-  background-color: #1a1b26;
+  width: 100vw;
+  margin-top: 1.5em;
+  padding: 1em 2em;
+  background-color: rgba(26, 27, 38, 0.1);
 }
 
 .what-we-do-page main .quote-section h3 {
   position: relative;
   z-index: 2;
-  color: #fff;
-  font-weight: 300;
+  color: #1A1B26;
+  font-weight: 100;
   letter-spacing: .15em;
   text-align: center;
 }
@@ -1388,7 +1379,7 @@ header .style-nav-bar-out {
           transform: translateX(-50%);
   width: 90vw;
   height: .01em;
-  background-color: bisque;
+  background-color: #cecece;
 }
 
 @media (min-width: 45em) {
@@ -1422,9 +1413,32 @@ header .style-nav-bar-out {
 }
 
 @media (min-width: 75em) {
-  .what-we-do-page main .quote-section h3 {
-    font-size: 4em;
+  .what-we-do-page main .quote-section {
+    padding-bottom: 2em;
   }
+  .what-we-do-page main .quote-section .brush-stroke {
+    top: -2em;
+    width: 30vw;
+  }
+  .what-we-do-page main .quote-section h3 {
+    width: 60%;
+    margin: 0 auto;
+    font-weight: 100;
+    font-size: 3em;
+  }
+}
+
+.what-we-do-page .no-tax {
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.what-we-do-page .tax {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .contact-page {
@@ -1488,7 +1502,7 @@ header .style-nav-bar-out {
 
 .contact-page main .contact-form-section .form {
   position: relative;
-  z-index: 10;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1497,20 +1511,23 @@ header .style-nav-bar-out {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  color: bisque;
+  color: #cecece;
 }
 
 .contact-page main .contact-form-section .form .group {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 90%;
           flex: 0 0 90%;
-  margin: .5em 0;
+  margin: 0;
 }
 
 .contact-page main .contact-form-section .form .group p {
-  font-size: 2em;
-  color: bisque;
+  font-size: 1.5em;
+  color: #cecece;
   font-weight: 300;
+  padding-left: .5em;
+  margin-bottom: 0;
+  margin-top: 1em;
 }
 
 .contact-page main .contact-form-section .form .group .formGroup :focus {
@@ -1524,20 +1541,20 @@ header .style-nav-bar-out {
           box-sizing: border-box;
   width: 100%;
   outline: none;
-  border-radius: .25em;
-  background-color: bisque;
+  border-radius: .15em;
+  background-color: #cecece;
 }
 
 .contact-page main .contact-form-section .form .group .formGroup textarea {
   width: 100%;
   margin: 0 auto;
   outline: none;
-  border-radius: 1.2em;
+  border-radius: .15em;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #1A1B26;
-  background-color: bisque;
+  background-color: #cecece;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.5em;
 }
@@ -1549,12 +1566,29 @@ header .style-nav-bar-out {
 }
 
 .contact-page main .contact-form-section .form .submit input {
-  color: bisque;
+  position: relative;
+  z-index: 5;
+  font-size: .75em;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 55%;
+  display: block;
+  margin: 2em auto;
+  border-radius: 5em;
+  background-color: rgba(26, 27, 38, 0.9);
+  padding: .5em 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #fff;
+  color: #cecece;
   font-size: 1.5em;
   padding: .25em .55em;
+}
+
+.contact-page main .contact-form-section .form .submit input:hover {
   cursor: pointer;
-  border-radius: .25em;
-  background-color: #0a57a4;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
 }
 
 @media (min-width: 45em) {
@@ -1614,6 +1648,11 @@ header .style-nav-bar-out {
   }
   .contact-page main .contact-form-section .form .submit input {
     font-size: 2em;
+    width: 20%;
+  }
+  .contact-page main .contact-form-section .form .submit input:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
   }
 }
 
@@ -1627,7 +1666,7 @@ header .style-nav-bar-out {
   background-color: rgba(26, 27, 38, 0.9);
   position: relative;
   z-index: 6;
-  color: bisque;
+  color: #cecece;
   font-weight: 400;
   padding: 1em;
   -webkit-box-sizing: border-box;
@@ -1662,8 +1701,8 @@ header .style-nav-bar-out {
 .contact-page main .contact-address-section .contact-addresses {
   position: relative;
   display: none;
-  background-color: rgba(26, 27, 38, 0.8);
-  color: bisque;
+  background-color: rgba(26, 27, 38, 0.1);
+  color: #cecece;
 }
 
 .contact-page main .contact-address-section .contact-addresses ul li {
@@ -1702,6 +1741,26 @@ header .style-nav-bar-out {
   font-size: 1.2em;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+@media (min-width: 75em) {
+  .contact-page main .contact-address-section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-page main .contact-address-section ul li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3%;
+            flex: 0 0 33.3%;
+  }
 }
 
 .generic-page {
@@ -1750,7 +1809,7 @@ header .style-nav-bar-out {
   font-size: 2em;
   text-align: center;
   font-weight: 700;
-  color: bisque;
+  color: #cecece;
   text-shadow: 2px 2px 1px black;
 }
 
@@ -1914,7 +1973,7 @@ header .style-nav-bar-out {
 
 @media (min-width: 75em) {
   .generic-page main .images-section {
-    margin-top: 20em;
+    margin-top: 26em;
   }
   .generic-page main .images-section .top-images .image img, .generic-page main .images-section .bottom-images .image img {
     width: 100%;
@@ -2099,8 +2158,10 @@ footer .footer-links ul li a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 2em;
   }
   footer .footer-content .footer-content-top {
     -webkit-box-align: center;
@@ -2135,7 +2196,7 @@ footer .footer-links ul li a {
     -webkit-text-stroke-width: 0;
   }
   footer .footer-content .footer-social a i:hover {
-    color: bisque;
+    color: #cecece;
   }
   footer .footer-content .footer-links ul {
     display: -webkit-box;
