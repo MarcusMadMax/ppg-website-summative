@@ -1417,8 +1417,8 @@ header .style-nav-bar-out {
     padding-bottom: 2em;
   }
   .what-we-do-page main .quote-section .brush-stroke {
-    top: -2em;
-    width: 30vw;
+    top: -4em;
+    width: 50vw;
   }
   .what-we-do-page main .quote-section h3 {
     width: 60%;
@@ -2185,7 +2185,7 @@ footer .footer-links ul li a {
   }
   footer .footer-content .footer-social {
     display: block;
-    margin-left: 6em;
+    margin-left: 16em;
   }
   footer .footer-content .footer-social a {
     margin: 0;
